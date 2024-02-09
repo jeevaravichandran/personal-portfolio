@@ -120,6 +120,7 @@ form .book-tables span label {
 }
 
 form .book-tables span input {
+    width:100%;
     padding: 10px;
     border: 1px solid darkolivegreen;
     margin-top: 10px;
@@ -318,6 +319,9 @@ footer .icon-info .icon-info-items i {
     form .book-tables span {
         width: 100%;
     }
+     form .book-tables span input{
+         width:100%;
+     }
 
     form .book-requests {
         width: 88%;
@@ -335,7 +339,7 @@ footer .icon-info .icon-info-items i {
     }
 
     .booking {
-        top: 100%;
+        top: 90%;
         margin-left: -5%;
         height: 10%;
         flex-wrap: wrap;
