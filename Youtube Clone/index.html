@@ -1,0 +1,588 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <!-- font awesome icon link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Youtube clone</title>
+    <link rel="website icon" href="imgs/icon.png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        /* ...........Header section......... */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+            padding: 15px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo #menu {
+            padding: 0 7px;
+            cursor: pointer;
+        }
+
+        .logo img {
+            width: 100px;
+        }
+
+        .search {
+            display: flex;
+        }
+
+        .search form {
+            display: flex;
+            height: 45px;
+        }
+
+        .search input {
+            width: 600px;
+            padding: 10px;
+            height: 100%;
+            border-bottom-left-radius: 30px;
+            border-top-left-radius: 30px;
+            border: 1px solid silver;
+        }
+
+        input:focus {
+            outline: none;
+            border: 1px solid rgb(25, 25, 199);
+            width: 650px;
+        }
+
+        .search button {
+            height: 100%;
+            width: 60px;
+            border: 1px 1px 0px;
+            border-top-right-radius: 30px;
+            border-bottom-right-radius: 30px;
+            border: 1px solid silver;
+        }
+
+        .mic {
+
+            margin-top: 2px;
+            border-radius: 50%;
+            background-color: whitesmoke;
+            padding: 5px 8px;
+            margin-left: 8px;
+        }
+
+        #mike {
+            margin-top: 8px;
+            font-size: 18px;
+        }
+
+        i {
+            color: black;
+            padding: 0 7px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* ...........Main Section........ */
+        main {
+            height: calc(100vh - 70px);
+            display: flex;
+            background-color: #f9f9f9;
+        }
+
+        .side-bar {
+            height: 100%;
+            width: 17%;
+            background-color: white;
+            overflow-y: hidden;
+            padding: 5px;
+        }
+
+        .side-bar:hover {
+            overflow-y: scroll;
+        }
+
+        .nav {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            margin: 20px 0;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            padding: 12px 20px;
+        }
+
+        .nav-link span {
+            margin-left: 15px;
+        }
+
+        .nav-link:hover {
+            background: #e5e5e5;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        .active {
+            background: #e5e5e5;
+            border-radius: 10px;
+        }
+
+        hr {
+            height: 1px;
+            background-color: #e5e5e5;
+            border: none;
+        }
+
+        .down-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px;
+            background-color: whitesmoke;
+            display: none;
+        }
+
+        .down-bar a i {
+            font-size: 23px;
+            padding: 20px;
+            border-radius: 50%;
+            text-align: center;
+        }
+
+        .down-bar a i:hover {
+            background-color: #e5e5e5;
+        }
+
+        .active-link {
+            background-color: #e5e5e5;
+            border-radius: 50%;
+        }
+
+        .content {
+            background-color: #f9f9f9;
+            width: 100%;
+            height: 100%;
+            padding: 15px 15px;
+            border-top: 1px solid #ddd;
+            overflow-y: scroll;
+        }
+
+        .videos {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .video {
+            flex-basis: 30%;
+            margin-bottom: 40px;
+
+        }
+
+        .thumbnail {
+            width: 100%;
+            height: 200px;
+        }
+
+        .thumbnail img {
+            height: 100%;
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .details {
+            margin-top: 10px;
+            display: flex;
+        }
+
+        .author img {
+            border-radius: 50%;
+            height: 40px;
+            width: 40px;
+            margin-right: 10px;
+        }
+
+        .title {
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .title h3 {
+            color: rgb(3, 3, 3);
+            line-height: 18px;
+            font-size: 14px;
+            margin-bottom: 6px;
+        }
+
+        .title a,
+        span {
+            text-decoration: none;
+            color: rgb(96, 96, 96);
+            margin-top: 3px;
+            font-size: 12px;
+        }
+
+        /* ------Media Query-------- */
+
+        @media screen and (max-width: 940px) {
+            .side-bar {
+                display: none;
+            }
+
+            .search input {
+                width: 300px;
+            }
+
+            .video {
+                flex-basis: 45%;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .side-bar {
+                display: none;
+            }
+
+            .video {
+                flex-basis: 80%;
+            }
+
+            .search {
+                display: none;
+            }
+
+            .down-bar {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ..........Header Section............ -->
+    <header class="header">
+        <div class="logo">
+            <i id="menu" class="fa-solid fa-bars"></i>
+            <img src="imgs/YouTube-Logo-Vector.png">
+        </div>
+
+        <div class="search ">
+            <form action="">
+                <input type="text" placeholder="Search" />
+                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+            <div class="mic">
+                <i id="mike" class="fa-solid fa-microphone"></i>
+            </div>
+        </div>
+
+        <div class="icons">
+            <i class="material-icons">videocam</i>
+            <i class="material-icons">apps</i>
+            <i class="material-icons">notifications</i>
+            <i class="material-icons display-this">account_circle</i>
+        </div>
+    </header>
+
+    <!-- ........Main Section...... -->
+    <main>
+        <div class="side-bar">
+            <div class="nav">
+                <a class="nav-link active">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Home</span>
+                </a>
+                <a class="nav-link">
+                    <i class="fa-solid fa-fire"></i>
+                    <span>Trending</span>
+                </a>
+                <a class="nav-link">
+                    <i class="fa-solid fa-user"></i>
+                    <span>Subscriptions</span>
+                </a>
+                <hr>
+                <a class="nav-link">
+                    <i class="fa-brands fa-youtube"></i>
+                    <span>Library</span>
+                </a>
+                <a class="nav-link">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                    <span>History</span>
+                </a>
+                <hr>
+
+                <h3 style=" margin: 15px 0px 0px 30px;opacity: 0.8;">Explore</h3>
+                <a class="nav-link">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span>Shopping</span>
+                </a>
+                <a class="nav-link">
+                    <i class="fa-solid fa-music"></i>
+                    <span>Music</span>
+                </a>
+                <a class="nav-link">
+                    <i class="fa-solid fa-clapperboard"></i>
+                    <span>Movie</span>
+                </a>
+                <a class="nav-link">
+                    <i class="fa-solid fa-tower-broadcast"></i>
+                    <span>Live</span>
+                </a>
+                <a class="nav-link">
+                    <i class="fa-regular fa-newspaper "></i>
+                    <span>News</span>
+                </a>
+                <a class="nav-link">
+                    <i class="fa-solid fa-gamepad "></i>
+                    <span>Gaming</span>
+                </a>
+                <a class="nav-link">
+                    <i class="fa-solid fa-trophy "></i>
+                    <span>Sports</span>
+                </a>
+                <a class="nav-link">
+                    <i class="fa-regular fa-lightbulb "></i>
+                    <span>Learning</span>
+                </a>
+                <a class="nav-link">
+                    <i class="fa-solid fa-shop "></i>
+                    <span>Fashion</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="down-bar">
+            <a class="active-link">
+                <i class="fa-solid fa-house"></i>
+            </a>
+            <a>
+                <i class="material-icons">subscriptions</i>
+            </a>
+            <a>
+                <i class="fa-solid fa-circle-plus"></i>
+            </a>
+            <a>
+                <i class="fa-solid fa-music"></i>
+            </a>
+            <a>
+                <i class="fa-solid fa-user"></i>
+            </a>
+        </div>
+        <div class="content">
+            <div class="videos">
+                <div class="video">
+                    <div class="thumbnail">
+                        <img src="imgs/Youtube Thumbnail (9).png" alt="" />
+                    </div>
+
+                    <div class="details">
+                        <div class="author">
+                            <img src="imgs/logo.png" alt="" />
+                        </div>
+                        <div class="title">
+                            <h3>
+                                How to become a front end developer | Jeeva Ravichandran </h3>
+                            <a href="">
+                                Tech Yoo
+                            </a>
+                            <span> 2M Views • 3 Months Ago </span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="video">
+                    <div class="thumbnail">
+                        <img src="imgs/Youtube Thumbnail (9).png" alt="" />
+                    </div>
+
+                    <div class="details">
+                        <div class="author">
+                            <img src="imgs/logo.png" alt="" />
+                        </div>
+                        <div class="title">
+                            <h3>
+                                How to become a front end developer | Jeeva Ravichandran </h3>
+                            <a href="">
+                                Tech Yoo
+                            </a>
+                            <span> 2M Views • 3 Months Ago </span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="video">
+                    <div class="thumbnail">
+                        <img src="imgs/Youtube Thumbnail (9).png" alt="" />
+                    </div>
+
+                    <div class="details">
+                        <div class="author">
+                            <img src="imgs/logo.png" alt="" />
+                        </div>
+                        <div class="title">
+                            <h3>
+                                How to become a front end developer | Jeeva Ravichandran
+                            </h3>
+                            <a href="">
+                                Tech Yoo
+                            </a>
+                            <span> 2M Views • 3 Months Ago </span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="video">
+                    <div class="thumbnail">
+                        <img src="imgs/Youtube Thumbnail (9).png" alt="" />
+                    </div>
+
+                    <div class="details">
+                        <div class="author">
+                            <img src="imgs/logo.png" alt="" />
+                        </div>
+                        <div class="title">
+                            <h3>
+                                How to become a front end developer | Jeeva Ravichandran </h3>
+                            <a href="">
+                                Tech Yoo
+                            </a>
+                            <span> 2M Views • 3 Months Ago </span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="video">
+                    <div class="thumbnail">
+                        <img src="imgs/Youtube Thumbnail (9).png" alt="" />
+                    </div>
+
+                    <div class="details">
+                        <div class="author">
+                            <img src="imgs/logo.png" alt="" />
+                        </div>
+                        <div class="title">
+                            <h3>
+                                How to become a front end developer | Jeeva Ravichandran </h3>
+                            <a href="">
+                                Tech Yoo
+                            </a>
+                            <span> 2M Views • 3 Months Ago </span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="video">
+                    <div class="thumbnail">
+                        <img src="imgs/Youtube Thumbnail (9).png" alt="" />
+                    </div>
+
+                    <div class="details">
+                        <div class="author">
+                            <img src="imgs/logo.png" alt="" />
+                        </div>
+                        <div class="title">
+                            <h3>
+                                How to become a front end developer | Jeeva Ravichandran
+                            </h3>
+                            <a href="">
+                                Tech Yoo
+                            </a>
+
+                            <span> 2M Views • 3 Months Ago </span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="video">
+                    <div class="thumbnail">
+                        <img src="imgs/Youtube Thumbnail (9).png" alt="" />
+                    </div>
+
+                    <div class="details">
+                        <div class="author">
+                            <img src="imgs/logo.png" alt="" />
+                        </div>
+                        <div class="title">
+                            <h3>
+                                How to become a front end developer | Jeeva Ravichandran </h3>
+                            <a href="">
+                                Tech Yoo
+                            </a>
+                            <span> 2M Views • 3 Months Ago </span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="video">
+                    <div class="thumbnail">
+                        <img src="imgs/Youtube Thumbnail (9).png" alt="" />
+                    </div>
+
+                    <div class="details">
+                        <div class="author">
+                            <img src="imgs/logo.png" alt="" />
+                        </div>
+                        <div class="title">
+                            <h3>
+                                How to become a front end developer | Jeeva Ravichandran </h3>
+                            <a href="">
+                                Tech Yoo
+                            </a>
+                            <span> 2M Views • 3 Months Ago </span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="video">
+                    <div class="thumbnail">
+                        <img src="imgs/Youtube Thumbnail (9).png" alt="" />
+                    </div>
+
+                    <div class="details">
+                        <div class="author">
+                            <img src="imgs/logo.png" alt="" />
+                        </div>
+                        <div class="title">
+                            <h3>
+                                How to become a front end developer | Jeeva Ravichandran </h3>
+                            <a href="">
+                                Tech Yoo
+                            </a>
+                            <span> 2M Views • 3 Months Ago </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

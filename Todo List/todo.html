@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <!-- font awesome icon link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <style>
+            * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'poppins', 'sans-serif';
+    background-image: url(img/todo.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+}
+
+.container {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.todo {
+    padding: 20px;
+    background: transparent;
+    box-shadow: 0 0 40px rgba(201, 26, 26, 0.1);
+    flex-basis: 30%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border-radius: 20px;
+    font-weight: bolder;
+}
+
+.container h1 {
+    text-align: center;
+    font-size: 25px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+.input-user{
+display: flex;
+justify-content: space-between;
+background-color: transparent;
+align-items: center;
+border-radius: 20px;
+height: 20%;
+border: 1px solid silver;
+padding: 10px;
+}
+.input-user input{
+    flex: 1;
+    background-color: transparent;
+    width: 100%;
+    border: none;
+    outline: none;
+}
+.input-user button{
+    background-color:rgb(224, 97, 97);
+    padding: 5px 10px;
+    border: none;
+    border-radius: 20px;
+    width: 20%;
+    height: 100%;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.input-user button:hover {
+    background-color: brown;
+    transform: translateY(-5px);
+} 
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ebe5e5;
+    margin-top: 10px;
+    padding: 5px;
+    border: none;
+    border-radius: 20px;
+}
+
+.list-item li {
+    list-style: none;
+    margin-left: 10px;
+}
+
+.list-item i {
+    background-color: rgba(187, 11, 11, 0.884);
+    color: white;
+    padding: 7px;
+    border-radius: 50%;
+    margin-right: 8px;
+    cursor: pointer;
+    font-size: 10px;
+    transition: all 0.5s;
+}
+
+.list-item i:hover {
+    background-color: red;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Media Query */
+
+@media screen and (max-width:600px) {
+    .todo {
+        flex-basis: 100%;
+    }
+}
+        </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="todo">
+            <h1>ToDo List 📝</h1>
+            <div class="input-user">
+                <input id="value" type="text" placeholder="Add your text">
+                <button onclick="add()">Add</button>
+            </div>
+            <ul id="list-container">
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function add() {
+            var list = document.getElementById("list-container")
+            var value = document.getElementById("value").value
+            var listitem = document.createElement("li")
+            listitem.setAttribute("class", "list-item")
+            listitem.innerHTML = value + `<i class="fa-solid fa-trash-can" onclick="deleteitem(event)"></i>`
+            list.append(listitem)
+        }
+
+        function deleteitem() {
+            event.target.parentElement.remove()
+        }
+    </script>
+</body>
+
+</html>
