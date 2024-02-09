@@ -449,6 +449,9 @@ footer {
     #header {
         background-image: url(imgs/phone\ header\ background.jpg);
     }
+    .container{
+        padding:10px 10px;
+    }
 
     .header-text {
         margin-top: 80%;
