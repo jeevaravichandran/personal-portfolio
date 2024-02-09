@@ -187,4 +187,7 @@ a:hover {
         height: 25%;
         left: 25%;
     }
+    .password-msg p{
+        font-size;11px
+    }
 }
