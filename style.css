@@ -447,10 +447,10 @@ footer {
 @media screen and (max-width:600px) {
 
     #header {
-        background-image: url(imgs/mobile\ bg\ \(1\).jpg);
+        background-image: url(imgs/mobile\ bg\ \(2\).jpg);
     }
     .container{
-        padding:5px 20px;
+        padding:2px 20px;
     }
 
     .header-text {
