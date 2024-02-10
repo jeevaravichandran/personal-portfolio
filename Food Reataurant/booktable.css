@@ -133,7 +133,7 @@ form .book-tables span input:focus {
 form .book-requests {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 90%;
 }
 
 form .book-requests label {
