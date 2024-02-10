@@ -94,8 +94,8 @@ nav .side-bar {
 }
 
 form {
-    padding: 20px;
-
+    padding: 10px 30px;
+    margin-top:20px;
 }
 
 form .book-tables {
@@ -106,7 +106,7 @@ form .book-tables {
 }
 
 form .book-tables span {
-    flex-basis: 30%;
+    flex-basis: 28%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -133,10 +133,7 @@ form .book-tables span input:focus {
 form .book-requests {
     display: flex;
     flex-direction: column;
-    width: 94%;
-    position: relative;
-    left: 3%;
-
+    width: 100%;
 }
 
 form .book-requests label {
@@ -145,7 +142,7 @@ form .book-requests label {
 }
 
 form .book-requests textarea {
-    padding: 10px;
+    width:100%;
     height: 100px;
     border: 1px solid darkolivegreen;
     margin-top: 5px;
@@ -318,12 +315,17 @@ footer .icon-info .icon-info-items i {
     form .book-tables span {
         width: 100%;
     }
-     form .book-tables span input{
-         width:100%;
-     }
-
-    form .book-requests {
-        width: 90%;
+    
+    form .book-tables span input{
+        width: 93%;
+    }
+    
+     form .book-requests {
+        width: 100%;
+    }
+    
+    form .book-requests textarea{
+        width: 100%;
     }
 
     form .book-requests button {
