@@ -304,8 +304,8 @@ footer .icon-info .icon-info-items i {
     nav .navbar {
         display: none;
     }
-    form{
-        padding:20px 10px;
+    form .book-tables{
+        padding:10px;
     }
     .book-table h1 {
         font-size: 20px;
