@@ -109,7 +109,13 @@ padding: 10px;
 /* Media Query */
 
 @media screen and (max-width:600px) {
+    body{
+        background-image: url(img/mobile\ bg.jpeg);
+    }
     .todo {
         flex-basis: 100%;
+    }
+    li{
+        font-size: 12px;
     }
 }
