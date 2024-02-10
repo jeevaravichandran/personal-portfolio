@@ -294,6 +294,7 @@ footer .icon-info .icon-info-items i {
 @media screen and (max-width:640px) {
     nav h1 a {
         font-size: 30px;
+        letter-spacing:1px;
     }
 
     nav .side-bar {
@@ -303,7 +304,9 @@ footer .icon-info .icon-info-items i {
     nav .navbar {
         display: none;
     }
-
+    form{
+        padding:20px 10px;
+    }
     .book-table h1 {
         font-size: 20px;
     }
@@ -324,7 +327,7 @@ footer .icon-info .icon-info-items i {
      }
 
     form .book-requests {
-        width: 88%;
+        width: 90%;
         margin-left: 10px;
     }
 
