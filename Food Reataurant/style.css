@@ -120,8 +120,13 @@ nav .side-bar i {
 /* Media Query */
 
 @media screen and (max-width:640px) {
+     body{
+        background-image: url(img/mobile\ bg\ 1.jpeg);
+    }
     nav h1 a {
         font-size: 30px;
+        letter-spacing: 1px;
+        color: white;
     }
 
     nav .side-bar {
@@ -140,5 +145,6 @@ nav .side-bar i {
 
     .container h1 {
         font-size: 20px;
+        color: white;
     }
 }
