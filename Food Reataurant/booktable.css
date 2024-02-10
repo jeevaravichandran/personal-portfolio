@@ -102,7 +102,6 @@ form .book-tables {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 20px;
     flex-wrap: wrap;
 }
 
@@ -304,9 +303,6 @@ footer .icon-info .icon-info-items i {
     nav .navbar {
         display: none;
     }
-    form .book-tables{
-        padding:10px;
-    }
     .book-table h1 {
         font-size: 20px;
     }
@@ -328,7 +324,6 @@ footer .icon-info .icon-info-items i {
 
     form .book-requests {
         width: 90%;
-        margin-left: 10px;
     }
 
     form .book-requests button {
