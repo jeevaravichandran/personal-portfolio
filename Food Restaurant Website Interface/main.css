@@ -1,0 +1,243 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+nav {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h1 a {
+    font-size: 40px;
+    letter-spacing: 2px;
+    color: darkolivegreen;
+    text-decoration: none;
+}
+
+nav .navbar {
+    display: flex;
+    column-gap: 30px;
+
+}
+
+nav .navbar a {
+    color: darkolivegreen;
+    text-decoration: none;
+    cursor: pointer;
+
+}
+
+nav .navbar a:hover {
+    text-decoration: underline;
+}
+
+nav .side-bar {
+    display: none;
+    color: darkolivegreen;
+    cursor: pointer;
+    font-size: 20px;
+
+}
+
+.sidenavbar-links {
+    background-color: darkolivegreen;
+    height: 100%;
+    width: 30%;
+    position: fixed;
+    top: 0;
+    left: -50%;
+    padding: 20px;
+    transition: 2s;
+    z-index: 2;
+
+}
+
+.sidenavbar-links .close-bar {
+    text-align: right;
+    font-size: x-large;
+    cursor: pointer;
+    color: white;
+}
+
+.sidenavbar-links .sidenavbar-link p {
+    padding: 10px;
+    margin-top: 10px;
+
+}
+
+.sidenavbar-links .sidenavbar-link a {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+
+}
+
+
+.searchbar form {
+    padding: 20px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.searchbar form input {
+    padding: 20px;
+    width: 70%;
+    border-radius: 20px;
+    border: 1px solid darkolivegreen;
+}
+
+.searchbar form input:focus {
+    outline: none;
+}
+
+.searchbar form input::placeholder {
+    color: darkolivegreen;
+}
+
+.searchbar form i {
+    color: darkolivegreen;
+    font-size: 20px;
+    position: relative;
+    left: -30px;
+    top: 18px;
+    cursor: pointer;
+}
+
+.food-container h1 {
+    margin-left: 3%;
+    margin-top: 30px;
+}
+
+.food-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px;
+}
+
+.food-items .food-item {
+    flex-basis: 25%;
+    text-align: center;
+}
+
+.food-items .food-item img {
+    width: 250px;
+    height: 200px;
+    border-radius: 10px;
+    margin-top: 50px;
+}
+
+.food-items .food-item h3 {
+    margin-top: 10px;
+}
+
+.food-items .food-item i {
+    margin-left: 10px;
+}
+
+.food-items .food-item button {
+    background-color: darkolivegreen;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.unavail {
+    text-align: center;
+    display: none;
+    margin-top: 40px;
+}
+
+.unavail i {
+    margin-top: 10px;
+    font-size: 80px;
+    background-color: yellow;
+    border-radius: 50%;
+}
+
+footer {
+    background-color: darkolivegreen;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+footer .icon {
+    margin-top: 7px;
+}
+
+footer .icon a {
+    text-decoration: none;
+}
+
+footer .icon i {
+    background-color: white;
+    color: darkolivegreen;
+    border-radius: 50%;
+    padding: 10px;
+    margin-left: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+footer .icon i:hover {
+    transform: translateY(-5px);
+}
+
+/* Media Query */
+
+@media screen and (max-width:640px) {
+    nav h1 a {
+        font-size: 30px;
+    }
+
+    nav .side-bar {
+        display: block;
+    }
+
+    nav .navbar {
+        display: none;
+    }
+
+    .searchbar form input {
+        width: 70%;
+    }
+
+    .food-container h1 {
+        margin-left: 5%;
+        margin-top: 30px;
+        font-size: 23px;
+    }
+
+    .unavail i {
+        font-size: 30px;
+    }
+
+    .food-items {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    footer {
+        font-size: 12px;
+    }
+
+    footer .icon i {
+        padding: 5px;
+        font-size: 14px;
+    }
+}

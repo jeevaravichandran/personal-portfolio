@@ -1,0 +1,151 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: url(img/homebackground.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+}
+
+nav {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h1 a {
+    font-size: 40px;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    color: darkolivegreen;
+    text-decoration: none;
+}
+
+nav .navbar {
+    display: flex;
+    column-gap: 30px;
+
+}
+
+nav .navbar a {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+
+}
+
+nav .navbar a:hover {
+    text-decoration: underline;
+}
+
+nav .side-bar {
+    display: none;
+    cursor: pointer;
+
+}
+
+nav .side-bar i {
+    color: white;
+    font-size: 20px;
+}
+
+.sidenavbar-links {
+
+    background-color: darkolivegreen;
+    height: 100%;
+    width: 40%;
+    position: fixed;
+    top: 0;
+    left: -60%;
+    padding: 20px;
+    transition: 2s;
+    z-index: 1;
+
+}
+
+.sidenavbar-links .close-bar {
+    text-align: right;
+    font-size: x-large;
+    cursor: pointer;
+    color: white;
+}
+
+.sidenavbar-links .sidenavbar-link p {
+    padding: 10px;
+    margin-top: 10px;
+
+}
+
+.sidenavbar-links .sidenavbar-link a {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+
+}
+
+.container {
+    position: absolute;
+    top: 40%;
+    left: 15%;
+}
+
+.container h3 {
+    color: darkolivegreen;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 10px;
+}
+
+.container button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: darkolivegreen;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.container button i {
+    margin-left: 5px;
+    padding: 5px;
+}
+
+/* Media Query */
+
+@media screen and (max-width:640px) {
+    body {
+        background-image: url(img/mobile\ bg\ 1.jpeg);
+    }
+
+    nav h1 a {
+        font-size: 30px;
+        letter-spacing: 1px;
+        color: white;
+    }
+
+    nav .side-bar {
+
+        display: block;
+        color: black;
+    }
+
+    nav .navbar {
+        display: none;
+    }
+
+    .container h3 {
+        color: darkolivegreen;
+    }
+
+    .container h1 {
+        font-size: 20px;
+        color: white;
+    }
+}

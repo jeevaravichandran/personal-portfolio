@@ -1,0 +1,270 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+nav {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h1 a {
+    font-size: 40px;
+    letter-spacing: 2px;
+    color: darkolivegreen;
+    text-decoration: none;
+}
+
+nav .navbar {
+    display: flex;
+    column-gap: 30px;
+
+}
+
+nav .navbar a {
+    color: darkolivegreen;
+    text-decoration: none;
+    cursor: pointer;
+
+}
+
+nav .navbar a:hover {
+    text-decoration: underline;
+}
+
+nav .side-bar {
+    display: none;
+    color: darkolivegreen;
+    cursor: pointer;
+    font-size: 20px;
+
+}
+
+.sidenavbar-links {
+    background-color: darkolivegreen;
+    height: 100%;
+    width: 30%;
+    position: fixed;
+    top: 0;
+    left: -50%;
+    padding: 20px;
+    transition: 2s;
+    z-index: 2;
+
+}
+
+.sidenavbar-links .close-bar {
+    text-align: right;
+    font-size: x-large;
+    cursor: pointer;
+    color: white;
+}
+
+.sidenavbar-links .sidenavbar-link p {
+    padding: 10px;
+    margin-top: 10px;
+
+}
+
+.sidenavbar-links .sidenavbar-link a {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+
+}
+
+.intro {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.intro .food-intro {
+    padding: 10px;
+    flex-basis: 40%;
+    flex-wrap: wrap;
+    z-index: 1;
+}
+
+.intro .food-intro h2 {
+    color: darkolivegreen;
+
+}
+
+.intro .food-intro p {
+    margin-top: 10px;
+}
+
+.intro .intro-img {
+    flex-basis: 40%;
+}
+
+.intro img {
+    width: 100%;
+    height: 450px;
+    border-radius: 100%;
+    margin-top: 20px;
+}
+
+.food-container h1 {
+    margin-left: 3%;
+    margin-top: 3%;
+}
+
+.main-coarse {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.main-coarse .main-coarse-items {
+    flex-basis: 25%;
+    text-align: center;
+}
+
+.main-coarse .main-coarse-items img {
+    width: 250px;
+    height: 200px;
+    border-radius: 10px;
+    margin-top: 50px;
+}
+
+.main-coarse .main-coarse-items h3 {
+    margin-top: 10px;
+}
+
+.main-coarse .main-coarse-items i {
+    margin-left: 10px;
+}
+
+.main-coarse .main-coarse-items button {
+    background-color: darkolivegreen;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+form button {
+    background-color: darkolivegreen;
+    color: white;
+    padding: 20px 30px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+footer {
+    background-color: darkolivegreen;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+footer .icon {
+    margin-top: 7px;
+}
+
+footer .icon a {
+    text-decoration: none;
+}
+
+footer .icon i {
+    background-color: white;
+    color: darkolivegreen;
+    border-radius: 50%;
+    padding: 10px;
+    margin-left: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+footer .icon i:hover {
+    transform: translateY(-5px);
+}
+
+
+/* Media Query */
+
+@media screen and (max-width:640px) {
+
+    nav h1 a {
+        font-size: 30px;
+    }
+
+    nav .side-bar {
+
+        display: block;
+    }
+
+    nav .navbar {
+        display: none;
+    }
+
+    .intro {
+        flex-direction: column;
+    }
+
+    .intro .food-intro,
+    .intro .intro-img {
+        flex-basis: 100%;
+    }
+
+    .intro .food-intro {
+        margin-top: 20px;
+    }
+
+    .intro .food-intro h2 {
+        font-size: 22px;
+    }
+
+    .intro .food-intro p {
+        font-size: 14px;
+    }
+
+    .intro img {
+        width: 90%;
+        height: 300px;
+        margin-left: 15px;
+    }
+
+    .food-container h1 {
+        margin-left: 7%;
+        margin-top: 15%;
+    }
+
+    .main-coarse {
+        flex-direction: column;
+    }
+
+    .main-coarse .main-coarse-items {
+        flex-basis: 100%;
+    }
+
+    form button {
+        margin-top: 50px;
+    }
+
+    footer {
+        font-size: 12px;
+    }
+
+    footer .icon i {
+        padding: 5px;
+        font-size: 14px;
+    }
+}
