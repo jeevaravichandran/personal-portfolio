@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Yoo</title>
+    <link rel="stylesheet" href="book.css">
+    <!-- --------Link fonts-------- -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <!-- Link font awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <nav>
+        <h1>Book Yoo</h1>
+        <ul>
+            <li><a href="index">Home</a></li>
+            <li><a href="books">Books</a></li>
+            <li><a href="authors">Authors</a></li>
+            <li><a href="about">About</a></li>
+        </ul>
+        <p onclick="opensidenav()"><i class="fa-solid fa-bars"></i></p>
+
+    </nav>
+
+    <div class="sidenav-bar">
+        <p onclick="closesidenav()"><i class="fa-solid fa-xmark"></i></p>
+        <ul>
+            <li><a href="index">Home</a></li>
+            <li><a href="books">Books</a></li>
+            <li><a href="authors">Authors</a></li>
+            <li><a href="about">About</a></li>
+        </ul>
+
+
+    </div>
+    <div class="heading">
+        <h1>Oscar Wilde's Famous Works</h1>
+    </div>
+
+    <div class="searchbox">
+        <form>
+            <input type="text" placeholder="Search by book name...." id="search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </form>
+    </div>
+
+    <div class="container">
+        <div class="book-container">
+            <h3>The Happy Prince</h3>
+            <h4>(Preiod~1888)</h4>
+            <p>The Happy Prince is the story of a majestic statue that looks down over a city. The statue is of a Prince
+                who had had an easy, luxurious life, completely unconcerne.......</p>
+            <a href="https://www.gutenberg.org/files/902/902-h/902-h.htm">Read online....</a>
+        </div>
+        <div class="book-container">
+            <h3>The Importance of Being Earnest</h3>
+            <h4>(Period~1895)</h4>
+            <p>The Importance of Being Earnest tells the story of two men, Jack Worthing and Algernon Moncrieff, who
+                both assume the identity of a fictional man named Ernest, become.........</p>
+            <a href="https://www.gutenberg.org/files/844/844-h/844-h.htm">Read online....</a>
+        </div>
+        <div class="book-container">
+            <h3>Lord Arthur Savile's Crime</h3>
+            <h4>(Period~1891)</h4>
+            <p>"Lord Arthur Savile's Crime" parodies the rules and rigid standards that people blindly follow in their
+                pursuit of happiness. One may view Lord Arthur as the reversal.........</p>
+            <a href="https://www.gutenberg.org/files/773/773-h/773-h.htm">Read online.... </a>
+        </div>
+        <div class="book-container">
+            <h3>The Picture of Dorian Gray</h3>
+            <h4>(Period~1891)</h4>
+            <p>Dorian has his portrait painted as a young man. The portrait takes on Dorian's sins and his signs of
+                aging. Dorian spends 18 years living a hedonistic lifestyle. Ultimately.........</p>
+            <a href="https://www.gutenberg.org/files/174/174-h/174-h.htm">Read online....</a>
+        </div>
+        <div class="book-container">
+            <h3>The Critic as Artist</h3>
+            <h4>(Period~1891)</h4>
+            <p>A critic studies art so they can understand and appreciate it, in the same way that a scholar studies and
+                appreciates a person. The interpretation is subjective, but it.........</p>
+            <a href="https://www.wilde-online.info/the-critic-as-artist.html">Read online....</a>
+        </div>
+        <div class="book-container">
+            <h3>Salome</h3>
+            <h4>(Period~1896)</h4>
+            <p>alomé is a one-act play by Irish playwright Oscar Wilde. It is about Salomé, a beautiful young woman who
+                is the niece and step-daughter of King Herod. The play is set in.........</p>
+            <a href="https://www.gutenberg.org/files/42704/42704-h/42704-h.htm">Read online...</a>
+        </div>
+
+    </div>
+    <div class="error-msg">
+        <h3>The Searched Book is not Available !!!</h3>
+        <i class="fa-regular fa-face-grin-beam-sweat"></i>
+    </div>
+
+    <footer>
+        <h1>Book Yoo</h1>
+        <p>bookyoo@gmail.com</p>
+        <p>9876543210</p>
+        <div class="social-icons">
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+        </div>
+        <p class="copyrights">copyrights 2024 bookyoo.All rights reserved</p>
+    </footer>
+
+
+    <script src="book.js"></script>
+</body>
+
+</html>

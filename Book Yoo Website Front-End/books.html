@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Yoo</title>
+    <link rel="stylesheet" href="book.css">
+    <!-- --------Link fonts-------- -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <!-- Link font awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <nav>
+        <h1>Book Yoo</h1>
+        <ul>
+            <li><a href="index">Home</a></li>
+            <li><a href="books">Books</a></li>
+            <li><a href="authors">Authors</a></li>
+            <li><a href="about">About</a></li>
+        </ul>
+        <p onclick="opensidenav()"><i class="fa-solid fa-bars"></i></p>
+
+    </nav>
+
+    <div class="sidenav-bar">
+        <p onclick="closesidenav()"><i class="fa-solid fa-xmark"></i></p>
+        <ul>
+            <li><a href="index">Home</a></li>
+            <li><a href="books">Books</a></li>
+            <li><a href="authors">Authors</a></li>
+            <li><a href="about">About</a></li>
+        </ul>
+    </div>
+    <div class="heading">
+        <h1>Famous Books</h1>
+    </div>
+
+    <div class="searchbox">
+        <form>
+            <input type="text" placeholder="Search by book name...." id="search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </form>
+    </div>
+
+    <div class="container">
+        <div class="book-container">
+            <h3>The Pilgrim's Progress</h3>
+            <h4>John Bunyan</h4>
+            <p>The Pilgrim's Progress is about a man named Christian who is anxious and ashamed of his sin and the
+                burden on his back. He must make a journey to the Celestial City to find........</p>
+            <a href="https://www.gutenberg.org/files/39452/39452-h/39452-h.htm">Read online....</a>
+        </div>
+        <div class="book-container">
+            <h3>A Midsummer Night's Dreams</h3>
+            <h4>William shakespeare</h4>
+            <p>A Midsummer Night's Dream Summary. Four Athenians run away to the forest only to have Puck the fairy make
+                book oneday he saw the real queen she was playing in the garden........</p>
+            <a href="https://shakespeare.mit.edu/midsummer/full.html">Read online....</a>
+        </div>
+        <div class="book-container">
+            <h3>The Lifted Veil</h3>
+            <h4>(Period~1859)</h4>
+            <p>The Lifted Veil explores themes of fate, isolation, and the dangers of obsession. It is a haunting and
+                thought-provoking work that showcases Eliot's masterful storytelling and deep understanding......</p>
+            <a href="https://www.gutenberg.org/cache/epub/2165/pg2165-images.html">Read online...</a>
+        </div>
+
+        <div class="book-container">
+            <h3>Silas Marner</h3>
+            <h4>(Period~1861)</h4>
+            <p>The story tells of the life of Silas Marner, who is a simple weaver. He was accused of theft in his
+                original religious community, the Lantern Yard, so he moved to Raveloe. He kept to......</p>
+            <a href="https://www.gutenberg.org/cache/epub/550/pg550-images.html">Read online....</a>
+        </div>
+        <div class="book-container">
+            <h3>Hunted Down</h3>
+            <h4>(Period~1859)</h4>
+            <p>Hunted Down is a detective story by Charles Dickens. The astute Sampson suspects that a certain Mr.
+                Julius Slinkton who turns up in his office one morning is not all that he seems.As........</p>
+            <a href="https://www.gutenberg.org/files/807/807-h/807-h.htm">Read online....</a>
+        </div>
+
+        <div class="book-container">
+            <h3>Washington Square</h3>
+            <h4>(Period~1880)</h4>
+            <p>The plot of Washington Square has the simplicity of old-fashioned melodrama: a plain-looking,
+                good-hearted young woman, the only child of a rich widower, is pursued by a.......</p>
+            <a href="https://www.gutenberg.org/cache/epub/2870/pg2870-images.html">Read online....</a>
+        </div>
+        <div class="book-container">
+            <h3>Love and Friendship[sic]</h3>
+            <h4>(Period~1719)</h4>
+            <p>It consists of letters from the heroine, Laura, to Marianne, the daughter of her friend Isabel. The story
+                is a parody of romantic novels of the time. In it, Laura falls..........</p>
+            <a href="https://www.gutenberg.org/cache/epub/1212/pg1212-images.html">Read online....</a>
+        </div>
+        <div class="book-container">
+            <h3>The Picture of Dorian Gray</h3>
+            <h4>(Period~1891)</h4>
+            <p>Dorian has his portrait painted as a young man. The portrait takes on Dorian's sins and his signs of
+                aging. Dorian spends 18 years living a hedonistic lifestyle. Ultimately.........</p>
+            <a href="https://www.gutenberg.org/files/174/174-h/174-h.htm">Read online....</a>
+        </div>
+        <div class="book-container">
+            <h3>The Importance of Being Earnest</h3>
+            <h4>(Period~1895)</h4>
+            <p>The Importance of Being Earnest tells the story of two men, Jack Worthing and Algernon Moncrieff, who
+                both assume the identity of a fictional man named Ernest, become.........</p>
+            <a href="https://www.gutenberg.org/files/844/844-h/844-h.htm">Read online ....</a>
+        </div>
+
+
+    </div>
+    <div class="error-msg">
+        <h3>The Searched Book is not Available !!!</h3>
+        <i class="fa-regular fa-face-grin-beam-sweat"></i>
+    </div>
+
+    <footer>
+        <h1>Book Yoo</h1>
+        <p>bookyoo@gmail.com</p>
+        <p>9876543210</p>
+        <div class="social-icons">
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+        </div>
+        <p class="copyrights">copyrights 2024 bookyoo.All rights reserved</p>
+    </footer>
+
+
+    <script src="book.js"></script>
+</body>
+
+</html>

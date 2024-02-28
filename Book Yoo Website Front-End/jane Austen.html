@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Yoo</title>
+    <link rel="stylesheet" href="book.css">
+    <!-- --------Link fonts-------- -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <!-- Link font awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <nav>
+        <h1>Book Yoo</h1>
+        <ul>
+            <li><a href="index">Home</a></li>
+            <li><a href="books">Books</a></li>
+            <li><a href="authors">Authors</a></li>
+            <li><a href="about">About</a></li>
+        </ul>
+        <p onclick="opensidenav()"><i class="fa-solid fa-bars"></i></p>
+
+    </nav>
+
+    <div class="sidenav-bar">
+        <p onclick="closesidenav()"><i class="fa-solid fa-xmark"></i></p>
+        <ul>
+            <li><a href="index">Home</a></li>
+            <li><a href="books">Books</a></li>
+            <li><a href="authors">Authors</a></li>
+            <li><a href="about">About</a></li>
+        </ul>
+
+
+    </div>
+    <div class="heading">
+        <h1>Jane Austen's Famous Works</h1>
+    </div>
+
+    <div class="searchbox">
+        <form>
+            <input type="text" placeholder="Search by book name...." id="search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </form>
+    </div>
+
+    <div class="container">
+        <div class="book-container">
+            <h3>Mansfield Park</h3>
+            <h4>(Period~1814)</h4>
+            <p>Mansfield Park Summary. The Mansfield Park plot follows Fanny Price, as she grows from a displaced child
+                into a timid but sharp and lovely young woman, who eventually family......</p>
+            <a href="https://www.gutenberg.org/cache/epub/141/pg141-images.html">Read online....</a>
+        </div>
+        <div class="book-container">
+            <h3>Pride and Prejudice</h3>
+            <h4>(Period~19th century)</h4>
+            <p>Pride and Prejudice follows the turbulent relationship between Elizabeth Bennet, the daughter of a
+                country gentleman, and Fitzwilliam Darcy, a rich aristocratic landowner........</p>
+            <a href="https://www.gutenberg.org/cache/epub/42671/pg42671-images.html">Read online....</a>
+        </div>
+        <div class="book-container">
+            <h3>The Watsons</h3>
+            <h4>(Period~1807)</h4>
+            <p>Emma and her sisters must marry, fast. If not, they face poverty, spinsterhood, or worse: an eternity
+                with their boorish brother and his awful wife. Luckily there are flying......</p>
+            <a href="https://www.gutenberg.org/cache/epub/63569/pg63569-images.html">Read online.... </a>
+        </div>
+        <div class="book-container">
+            <h3>Love and Friendship[sic]</h3>
+            <h4>(Period~1719)</h4>
+            <p>It consists of letters from the heroine, Laura, to Marianne, the daughter of her friend Isabel. The story
+                is a parody of romantic novels of the time. In it, Laura falls..........</p>
+            <a href="https://www.gutenberg.org/cache/epub/1212/pg1212-images.html">Read online....</a>
+        </div>
+        <div class="book-container">
+            <h3>Sense and Sensibility</h3>
+            <h4>(Period~1813)</h4>
+            <p>In Sense and Sensibility by Jane Austen, Elinor Dashwood and Marianne Dashwood are sisters who, though
+                technically upper class, find themselves with no inheritance after their father......</p>
+            <a href="https://www.gutenberg.org/cache/epub/21839/pg21839-images.html">Read online....</a>
+        </div>
+        <div class="book-container">
+            <h3>Persuasion</h3>
+            <h4>(Period~1816)</h4>
+            <p>Persuasion by Jane Austen is a satirical romance that follows the love story of Anne Elliot and Frederick
+                Wentworth. After Anne is persuaded by her family and Lady Russell to reject.......</p>
+            <a href="https://www.gutenberg.org/cache/epub/105/pg105-images.html">Read online...</a>
+        </div>
+
+    </div>
+    <div class="error-msg">
+        <h3>The Searched Book is not Available !!!</h3>
+        <i class="fa-regular fa-face-grin-beam-sweat"></i>
+    </div>
+
+    <footer>
+        <h1>Book Yoo</h1>
+        <p>bookyoo@gmail.com</p>
+        <p>9876543210</p>
+        <div class="social-icons">
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+        </div>
+        <p class="copyrights">copyrights 2024 bookyoo.All rights reserved</p>
+    </footer>
+
+
+    <script src="book.js"></script>
+</body>
+
+</html>

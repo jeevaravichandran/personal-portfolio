@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Yoo</title>
+    <!-- --------Link fonts-------- -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <!-- Link font awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- -------my css-------- -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav>
+        <h1>Book Yoo</h1>
+        <ul>
+            <li><a href="index">Home</a></li>
+            <li><a href="books">Books</a></li>
+            <li><a href="authors">Authors</a></li>
+            <li><a href="about">About</a></li>
+        </ul>
+        <p onclick="opensidenav()"><i class="fa-solid fa-bars"></i></p>
+    </nav>
+    <div class="sidenav-bar">
+        <p onclick="closesidenav()"><i class="fa-solid fa-xmark"></i></p>
+        <ul>
+            <li><a href="index">Home</a></li>
+            <li><a href="books">Books</a></li>
+            <li><a href="authors">Authors</a></li>
+            <li><a href="about">About</a></li>
+        </ul>
+    </div>
+    <div class="head">
+        <h1>My Works</h1>
+        <p>(Write your own Thoughts into the book!!!)</p>
+    </div>
+    <div class="container">
+        <div class="book-container">
+            <h2>Rich dad poor dad</h2>
+            <h4>Robert</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, facilis labore aliquam veritatis
+                officiis eos quo, distinctio ratione quam, quibusdam maiores officia porro? Vel, molestiae.</p>
+            <button onclick="deletepopupmsg(event)" id="delete-popup">Delete</button>
+        </div>
+    </div>
+
+    <div class="popup-layer">
+        <div class="popup-message">
+            <h2>Add Book</h2>
+            <form id="popup-form">
+                <input type="text" placeholder="Book Title" id="book-title-input">
+                <input type="text" placeholder="Book Author" id="book-author-input">
+                <textarea placeholder="Short Description" id="book-description-input"></textarea>
+                <button id="add-book">Add</button>
+                <button id="cancel-popup">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <button class="add-button" id="add-popup">+</button>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

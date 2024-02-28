@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Yoo</title>
+    <link rel="stylesheet" href="book.css">
+    <!-- --------Link fonts-------- -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <!-- Link font awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <nav>
+        <h1>Book Yoo</h1>
+        <ul>
+            <li><a href="index">Home</a></li>
+            <li><a href="books">Books</a></li>
+            <li><a href="authors">Authors</a></li>
+            <li><a href="about">About</a></li>
+        </ul>
+        <p onclick="opensidenav()"><i class="fa-solid fa-bars"></i></p>
+
+    </nav>
+
+    <div class="sidenav-bar">
+        <p onclick="closesidenav()"><i class="fa-solid fa-xmark"></i></p>
+        <ul>
+            <li><a href="index">Home</a></li>
+            <li><a href="books">Books</a></li>
+            <li><a href="authors">Authors</a></li>
+            <li><a href="about">About</a></li>
+        </ul>
+
+    </div>
+    <div class="heading">
+        <h1>Henry Jame's Famous Works</h1>
+    </div>
+
+    <div class="searchbox">
+        <form>
+            <input type="text" placeholder="Search by book name...." id="search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </form>
+    </div>
+
+    <div class="container">
+        <div class="book-container">
+            <h3>The Turn of the Screw</h3>
+            <h4>(Period~1898)</h4>
+            <p>Based on Henry James's chilling novella, Britten's The Turn of the Screw tells the story of a governess,
+                desperate to protect her children from evil as they experience.......</p>
+            <a href="https://www.gutenberg.org/cache/epub/209/pg209-images.html">Read online....</a>
+        </div>
+        <div class="book-container">
+            <h3>The Beast in the Jungle</h3>
+            <h4>(Period~1903)</h4>
+            <p>The Beast in the Jungle is about appreciating what makes life worth living. To illustrate this point, the
+                story tells of a man who refuses to live his life fully because he is always.......</p>
+            <a href="https://www.gutenberg.org/cache/epub/1093/pg1093-images.html">Read online....</a>
+        </div>
+        <div class="book-container">
+            <h3>Daisy Miller:A study</h3>
+            <h4>(Period~1879)</h4>
+            <p>Daisy Miller is about a brash American young woman who collides with European traditions regarding social
+                protocols. Her refusal to comply with social antiquities contributes to her.......</p>
+            <a href="https://www.gutenberg.org/cache/epub/208/pg208-images.html">Read online.... </a>
+        </div>
+        <div class="book-container">
+            <h3>The Potrait of Lady</h3>
+            <h4>(Period~1881)</h4>
+            <p>The Portrait of a Lady is a classic novel by Henry James. It follows the story of Isabel Archer, a young
+                American woman who inherits a large fortune and is thrust into the high society.......</p>
+            <a href="https://www.gutenberg.org/cache/epub/2833/pg2833-images.html">Read online....</a>
+        </div>
+        <div class="book-container">
+            <h3>Washington Square</h3>
+            <h4>(Period~1880)</h4>
+            <p>The plot of Washington Square has the simplicity of old-fashioned melodrama: a plain-looking,
+                good-hearted young woman, the only child of a rich widower, is pursued by a.......</p>
+            <a href="https://www.gutenberg.org/cache/epub/2870/pg2870-images.html">Read online....</a>
+        </div>
+        <div class="book-container">
+            <h3>The Jolly Corner</h3>
+            <h4>(Period~1908)</h4>
+            <p>"The Jolly Corner" is a short story by Henry James published first in the magazine The English Review of
+                December 1908. One of James' most noted ghost stories, "The Jolly Corner" describes the......</p>
+            <a href="https://www.gutenberg.org/cache/epub/1190/pg1190-images.html">Read online...</a>
+        </div>
+
+    </div>
+    <div class="error-msg">
+        <h3>The Searched Book is not Available !!!</h3>
+        <i class="fa-regular fa-face-grin-beam-sweat"></i>
+    </div>
+
+    <footer>
+        <h1>Book Yoo</h1>
+        <p>bookyoo@gmail.com</p>
+        <p>9876543210</p>
+        <div class="social-icons">
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+        </div>
+        <p class="copyrights">copyrights 2024 bookyoo.All rights reserved</p>
+    </footer>
+
+
+    <script src="book.js"></script>
+</body>
+
+</html>

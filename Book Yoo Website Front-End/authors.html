@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Yoo</title>
+    <link rel="stylesheet" href="book.css">
+    <!-- --------Link fonts-------- -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <!-- Link font awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <nav>
+        <h1>Book Yoo</h1>
+        <ul>
+            <li><a href="index">Home</a></li>
+            <li><a href="books">Books</a></li>
+            <li><a href="authors">Authors</a></li>
+            <li><a href="about">About</a></li>
+        </ul>
+        <p onclick="opensidenav()"> <i class="fa-solid fa-bars"></i></p>
+
+    </nav>
+
+    <div class="sidenav-bar">
+        <p onclick="closesidenav()"><i class="fa-solid fa-xmark"></i></p>
+        <ul>
+            <li><a href="index">Home</a></li>
+            <li><a href="books">Books</a></li>
+            <li><a href="authors">Authors</a></li>
+            <li><a href="about">About</a></li>
+        </ul>
+
+    </div>
+    <div class="heading">
+        <h1>Famous Authors</h1>
+    </div>
+    <div class="searchbox">
+        <form>
+            <input type="text" placeholder="Search by author name.... " id="search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </form>
+    </div>
+
+    <div class="container">
+        <div class="book-container">
+            <img src="imgs/william shakespeare.png">
+            <h3>William Shakespeare</h3>
+            <h4>(1564-1616)</h4>
+            <p>William Shakespeare was an English playwright, poet and actor. He is widely regarded as the greatest
+                writer in the English language and the world's..... </p>
+            <a href="william Shakespeare">See more....</a>
+        </div>
+        <div class="book-container">
+            <img src="imgs/oscar wilde.png">
+            <h3>Oscar wilde</h3>
+            <h4>(1854-1900)</h4>
+            <p>Oscar Fingal O'Flahertie Wills Wilde was an Irish poet and playwright. After writing in different forms
+                throughout the 1880s, he became one of the......</p>
+            <a href="oscar Wilde">See more....</a>
+        </div>
+        <div class="book-container">
+            <img src="imgs/jane-austen.jpg">
+            <h3>Jane Austen</h3>
+            <h4>(1775-1817)</h4>
+            <p>Jane Austen was an English novelist known primarily for her six novels, which implicitly interpret,
+                critique, and comment upon the British landed......</p>
+            <a href="jane Austen">See more.... </a>
+        </div>
+        <div class="book-container">
+            <img src="imgs/henry james.jpeg">
+            <h3>Henry James</h3>
+            <h4>(1843-1916)</h4>
+            <p>Henry James OM was an American-British author. He is regarded as a key transitional figure between
+                literary realism and literary modernism, and.....</p>
+            <a href="henry james">See more....</a>
+        </div>
+        <div class="book-container">
+            <img src="imgs/George_Eliot,.jpg">
+            <h3>George Eliot</h3>
+            <h4>(1819-1880)</h4>
+            <p>Mary Ann Evans, known by her pen name George Eliot, was an English novelist, poet, journalist,
+                translator, and one of the leading writers of the......</p>
+            <a href="george eliot">See more....</a>
+        </div>
+        <div class="book-container">
+            <img src="imgs/Charles-Dickens.png">
+            <h3>Charles Dickens</h3>
+            <h4>(1812-1870)</h4>
+            <p>Charles John Huffam Dickens was an English novelist and social critic who created some of the world's
+                best-known fictional characters, and is regarded.........</p>
+            <a href="charles Dickens">See more...</a>
+        </div>
+
+    </div>
+    <div class="error-msg">
+        <h3>The Searched Author is not Available !!!</h3>
+        <i class="fa-regular fa-face-grin-beam-sweat"></i>
+    </div>
+
+    <footer>
+        <h1>Book Yoo</h1>
+        <p>bookyoo@gmail.com</p>
+        <p>9876543210</p>
+        <div class="social-icons">
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+        </div>
+        <p class="copyrights">copyrights 2024 bookyoo.All rights reserved</p>
+    </footer>
+
+
+    <script src="book.js"></script>
+</body>
+
+</html>
