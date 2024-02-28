@@ -71,25 +71,3 @@ function showData() {
 }
 
 showData()
-
-//Search Functionality
-
-var enteredText = ""
-
-var search = document.getElementById("search")
-var container = document.querySelector(".container")
-var bContainer = container.querySelectorAll(".book-container")
-
-search.addEventListener("keyup", function () {
-    enteredText = event.target.value.toUpperCase()
-    for (count = 0; count < bContainer.length; count++) {
-        var bContainerList = bContainer[count].querySelector("h3").textContent
-
-        if (bContainerList.toUpperCase().indexOf(enteredText) >= 0) {
-            bContainer[count].style.display = "block"
-        }
-        else {
-            bContainer[count].style.display = "none"
-        }
-    }
-})
