@@ -61,13 +61,13 @@ function deletepopupmsg(event) {
 //Store the information in local storage
 
 function saveData() {
-    localStorage.setItem("data", container.innerHTML)
+    localStorage.setItem("bookYoo-data", container.innerHTML)
 }
 
 // Show the stored data whenever we use this website after and anychanges in this website
 
 function showData() {
-    container.innerHTML = localStorage.getItem("data")
+    container.innerHTML = localStorage.getItem("bookYoo-data")
 }
 
 showData()
