@@ -270,11 +270,11 @@ nav p {
     }
 
     .popup-message input {
-        font-size: 16px;
+        font-size: 13px;
     }
 
     .popup-message textarea {
-        font-size: 16px;
+        font-size: 13px;
     }
 
     .popup-message input::placeholder {
