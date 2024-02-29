@@ -40,13 +40,13 @@ function taskComplete(event) {
 // Store the updated data into the local storage 
 
 function saveData() {
-    localStorage.setItem("data", listContainer.innerHTML)
+    localStorage.setItem("todoList-data", listContainer.innerHTML)
 }
 
-//Show the updated data when we oprn the browser 
+//Show the updated data when we open the browser 
 
 function showData() {
-    listContainer.innerHTML = localStorage.getItem("data")
+    listContainer.innerHTML = localStorage.getItem("todoList-data")
 }
 
 showData()
