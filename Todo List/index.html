@@ -22,28 +22,14 @@
         <div class="todo">
             <h1>ToDo List 📝</h1>
             <div class="input-user">
-                <input id="value" type="text" placeholder="Add your text">
+                <input id="input-Value" type="text" placeholder="Add your text">
                 <button onclick="add()">Add</button>
             </div>
-            <ul id="list-container">
+            <ul id="listContainer">
             </ul>
         </div>
     </div>
-
-    <script>
-        function add() {
-            var list = document.getElementById("list-container")
-            var value = document.getElementById("value").value
-            var listitem = document.createElement("li")
-            listitem.setAttribute("class", "list-item")
-            listitem.innerHTML = value + `<i class="fa-solid fa-trash-can" onclick="deleteitem(event)"></i>`
-            list.append(listitem)
-        }
-
-        function deleteitem() {
-            event.target.parentElement.remove()
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
