@@ -42,25 +42,28 @@ body {
     letter-spacing: 1px;
     margin-bottom: 10px;
 }
-.input-user{
-display: flex;
-justify-content: space-between;
-background-color: transparent;
-align-items: center;
-border-radius: 20px;
-height: 20%;
-border: 1px solid silver;
-padding: 10px;
+
+.input-user {
+    display: flex;
+    justify-content: space-between;
+    background-color: transparent;
+    align-items: center;
+    border-radius: 20px;
+    height: 20%;
+    border: 1px solid silver;
+    padding: 10px;
 }
-.input-user input{
+
+.input-user input {
     flex: 1;
     background-color: transparent;
     width: 100%;
     border: none;
     outline: none;
 }
-.input-user button{
-    background-color:rgb(224, 97, 97);
+
+.input-user button {
+    background-color: rgb(224, 97, 97);
     padding: 5px 10px;
     border: none;
     border-radius: 20px;
@@ -69,10 +72,12 @@ padding: 10px;
     cursor: pointer;
     transition: all 0.5s;
 }
+
 .input-user button:hover {
     background-color: brown;
     transform: translateY(-5px);
-} 
+}
+
 .list-item {
     display: flex;
     justify-content: space-between;
@@ -82,14 +87,15 @@ padding: 10px;
     padding: 5px;
     border: none;
     border-radius: 20px;
+    font-size: 12px;
 }
 
 .list-item li {
     list-style: none;
-    margin-left: 10px;
+    margin-left: 20px;
 }
 
-.list-item i {
+.list-item #deleteIcon {
     background-color: rgba(187, 11, 11, 0.884);
     color: white;
     padding: 7px;
@@ -97,25 +103,45 @@ padding: 10px;
     margin-right: 8px;
     cursor: pointer;
     font-size: 10px;
+    float: inline-end;
     transition: all 0.5s;
 }
 
-.list-item i:hover {
+.list-item #deleteIcon:hover {
     background-color: red;
     color: white;
     transform: translateY(-2px);
 }
 
+.circle-checked {
+    margin-left: 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.fa-circle-check {
+    background-color: green;
+    color: white;
+    font-size: 20px;
+    border-radius: 50%;
+}
+
+.completed {
+    text-decoration: line-through;
+}
+
 /* Media Query */
 
 @media screen and (max-width:600px) {
-    body{
+    body {
         background-image: url(img/mobile\ bg.jpeg);
     }
+
     .todo {
         flex-basis: 100%;
     }
-    li{
+
+    li {
         font-size: 12px;
     }
 }
