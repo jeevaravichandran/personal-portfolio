@@ -232,6 +232,7 @@ nav ul li a:hover::after {
     border-radius: 15px;
     transition: background 0.5s, transform 0.5s;
     cursor: pointer;
+    text-align:center;
 }
 
 .skill-list div i {
@@ -239,8 +240,8 @@ nav ul li a:hover::after {
     margin-bottom: 30px;
 }
 
-.skill-list div h2 {
-    font-size: 30px;
+.skill-list div h3 {
+    font-size: 25px;
     font-weight: 500;
     margin-bottom: 15px;
 }
