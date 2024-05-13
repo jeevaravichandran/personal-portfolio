@@ -1,0 +1,311 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+
+nav h1 a {
+  font-size: 40px;
+  font-weight: bolder;
+  letter-spacing: 2px;
+  color: darkolivegreen;
+  text-decoration: none;
+}
+
+nav .navbar {
+  display: flex;
+  -moz-column-gap: 30px;
+  column-gap: 30px;
+}
+
+nav .navbar p a {
+  color: darkolivegreen;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+nav .navbar p a:hover {
+  text-decoration: underline;
+}
+
+nav .side-bar {
+  display: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: darkolivegreen;
+}
+
+.sidenavbar-links {
+  position: fixed;
+  top: 0;
+  left: -60%;
+  height: 100%;
+  width: 40%;
+  background-color: darkolivegreen;
+  z-index: 2;
+  padding: 20px;
+  transition: 2s;
+}
+
+.sidenavbar-links .close-bar {
+  text-align: right;
+  font-size: x-large;
+  cursor: pointer;
+  color: white;
+}
+
+.sidenavbar-links .sidenavbar-link p {
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.sidenavbar-links .sidenavbar-link p a {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.book-table h1 {
+  font: 40px;
+  letter-spacing: 1px;
+  text-align: center;
+  text-decoration: underline;
+  margin-bottom: 5px;
+  color: darkolivegreen;
+}
+
+.book-table p {
+  text-align: center;
+}
+
+form {
+  padding: 10px 30px;
+  margin-top: 20px;
+}
+
+form .book-tables {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+form .book-tables span {
+  flex-basis: 28%;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+form .book-tables span label {
+  color: darkolivegreen;
+}
+
+form .book-tables span input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid darkolivegreen;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  outline: none;
+}
+
+form .book-requests {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 96%;
+  margin-left: 30px;
+}
+
+form .book-requests label {
+  color: darkolivegreen;
+  margin-top: 5px;
+}
+
+form .book-requests textarea {
+  width: 100%;
+  height: 100px;
+  border: 1px solid darkolivegreen;
+  margin-top: 5px;
+}
+
+form .book-requests button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background-color: darkolivegreen;
+  color: white;
+  width: 15%;
+  margin: 20px auto;
+  cursor: pointer;
+}
+
+.overlay-booking {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 3;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  display: none;
+}
+
+.overlay-booking .booking {
+  background-color: darkolivegreen;
+  color: white;
+  padding: 30px;
+  width: 30%;
+  border-radius: 20px;
+  z-index: 4;
+}
+
+.overlay-booking .booking p {
+  text-align: center;
+}
+
+.overlay-booking .booking .booking-information {
+  margin-top: 5px;
+  margin-left: 30px;
+}
+
+.overlay-booking .booking i {
+  background-color: lightgreen;
+  border-radius: 100%;
+  color: white;
+  padding: 5px;
+  margin-left: 10px;
+}
+
+.overlay-booking .booking form button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 20px;
+  background-color: white;
+  color: darkolivegreen;
+  cursor: pointer;
+  float: inline-end;
+}
+
+footer {
+  background-color: darkolivegreen;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+footer .icon {
+  margin-top: 7px;
+}
+
+footer .icon a {
+  text-decoration: none;
+}
+
+footer .icon a i {
+  background-color: white;
+  color: darkolivegreen;
+  border-radius: 50%;
+  padding: 10px;
+  margin-left: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+footer .icon a i:hover {
+  transform: translateY(-5px);
+}
+
+/* Media Query */
+@media screen and (max-width: 640px) {
+  nav h1 a {
+    font-size: 30px;
+  }
+
+  nav .side-bar {
+    display: block;
+  }
+
+  nav .navbar {
+    display: none;
+  }
+
+  .book-table h1 {
+    font-size: 20px;
+  }
+
+  .book-table p {
+    font-size: 12px;
+  }
+
+  form .book-tables {
+    flex-direction: column;
+  }
+
+  form .book-tables span {
+    width: 100%;
+  }
+
+  form .book-tables span input {
+    width: 93%;
+  }
+
+  form .book-requests {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  form .book-requests textarea {
+    width: 100%;
+  }
+
+  form .book-requests button {
+    width: 40%;
+  }
+
+  .overlay-booking .booking {
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .overlay-booking .booking p i {
+    margin-left: 0;
+  }
+
+  .overlay-booking .booking .booking-information {
+    display: none;
+  }
+
+  footer {
+    font-size: 12px;
+  }
+
+  footer .icon i {
+    padding: 5px;
+    font-size: 14px;
+  }
+}
+
+/*# sourceMappingURL=booktable.css.map */

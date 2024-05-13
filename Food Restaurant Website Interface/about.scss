@@ -1,0 +1,246 @@
+//Variables
+$primary-color: white;
+$bg-color: darkolivegreen;
+$basic-size: 10px;
+$default-size: 20px;
+
+//Mixin 
+@mixin position($position, $top, $left, $height, $width) {
+    position: $position;
+    top: $top;
+    left: $left;
+    height: $height;
+    width: $width;
+}
+
+@mixin nav-design($color, $text-dec, $cursor) {
+    color: $color;
+    text-decoration: $text-dec;
+    cursor: $cursor;
+}
+
+@mixin flex($display, $justify-content, $align-itmes, $flex-wrap, $padding) {
+    display: $display;
+    justify-content: $justify-content;
+    align-items: $align-itmes;
+    flex-wrap: $flex-wrap;
+    padding: $padding;
+}
+
+//Extend for same design pattern 
+.button-design {
+    background-color: $bg-color;
+    color: $primary-color;
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+//My page styling
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+nav {
+    @include flex(flex, space-between, center, wrap, 15px);
+
+    h1 {
+        a {
+            font-size: 40px;
+            font-weight: bolder;
+            letter-spacing: 2px;
+            color: $bg-color;
+            text-decoration: none;
+        }
+    }
+
+    .navbar {
+        display: flex;
+        column-gap: 30px;
+
+        p {
+            a {
+                @include nav-design($bg-color, none, pointer);
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .side-bar {
+        display: none;
+        cursor: pointer;
+        font-size: $default-size;
+        color: $bg-color;
+    }
+}
+
+.sidenavbar-links {
+    @include position(fixed, 0, -60%, 100%, 40%);
+    background-color: $bg-color;
+    padding: $default-size;
+    transition: 2s;
+    z-index: 2;
+
+    .close-bar {
+        text-align: right;
+        font-size: x-large;
+        cursor: pointer;
+        color: $primary-color;
+    }
+
+    .sidenavbar-link {
+        p {
+            padding: $basic-size;
+            margin-top: $basic-size;
+
+            a {
+                @include nav-design($primary-color, none, pointer);
+            }
+        }
+    }
+}
+
+.about-us {
+    @include flex(flex, space-around, center, wrap, 30px);
+
+    .about,
+    .about-image {
+        flex-basis: 40%;
+    }
+
+    .about {
+        h1 {
+            font-size: 45px;
+            color: $bg-color;
+            letter-spacing: 1px;
+        }
+
+        p {
+            font-size: 15px;
+        }
+
+        button {
+            @extend .button-design;
+            margin-top: $default-size;
+        }
+    }
+
+    .about-image {
+        width: 400px;
+        height: 450px;
+        border: 1px solid black;
+
+        img {
+            @include position(relative, -5%, -8%, 450px, 100%);
+            margin-top: 40px;
+        }
+    }
+}
+
+footer {
+    background-color: $bg-color;
+    color: $primary-color;
+    padding: $default-size;
+    text-align: center;
+    margin-top: 40px;
+
+    .icon {
+        margin-top: 7px;
+
+        a {
+            text-decoration: none;
+
+            i {
+                background-color: $primary-color;
+                color: $bg-color;
+                border-radius: 50%;
+                padding: $basic-size;
+                margin-left: $basic-size;
+                font-size: $default-size;
+                cursor: pointer;
+                transition: all 0.5s;
+
+                &:hover {
+                    transform: translateY(-5px);
+                }
+            }
+        }
+    }
+}
+
+/* Media Query */
+
+@media screen and (max-width:640px) {
+    nav {
+        h1 {
+            a {
+                font-size: 30px;
+            }
+        }
+
+        .side-bar {
+            display: block;
+
+        }
+
+        .navbar {
+            display: none;
+        }
+    }
+
+    .about-us {
+        flex-direction: column;
+
+        .about,
+        .about-image {
+            flex-basis: 100%;
+        }
+
+        .about {
+            h1 {
+                font-size: 30px;
+            }
+
+            h3 {
+                font-size: 15px;
+            }
+
+            p {
+                font-size: 13px;
+                margin-top: $basic-size;
+            }
+        }
+
+        .about-image {
+            width: 300px;
+            height: 170px;
+            margin-top: 50px;
+
+            img {
+                height: 250px;
+                left: -5%;
+            }
+        }
+    }
+
+    footer {
+        font-size: 12px;
+
+        .icon {
+            i {
+                padding: 5px;
+                font-size: 14px;
+            }
+        }
+    }
+}

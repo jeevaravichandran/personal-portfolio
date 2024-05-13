@@ -1,0 +1,249 @@
+//Variables
+$primary-color:white;
+$bg-color:darkolivegreen;
+$basic-size:10px;
+$default-size:20px;
+
+//Mixin 
+
+@mixin nav-design($color,$text-dec,$cursor){
+    color: $color;
+    text-decoration: $text-dec;
+    cursor: $cursor;
+}
+@mixin flex($display,$justify-content,$align-itmes,$flex-wrap,$padding){
+    display: $display;
+    justify-content: $justify-content;
+    align-items: $align-itmes;
+    flex-wrap: $flex-wrap;
+    padding: $padding;
+}
+
+//Extend for same design pattern 
+.button-design{
+    background-color: $bg-color;
+    color: $primary-color;
+    padding: $default-size;
+    border: none;
+    border-radius: $basic-size;
+    cursor: pointer;
+}
+//My page styling
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+nav{
+   @include flex(flex, space-between, center, wrap, 15px);
+    h1{
+        a{
+            font-size: 40px;
+            font-weight: bolder;
+            letter-spacing: 2px;
+            color:$bg-color;
+            text-decoration: none;
+        }
+    }
+    .navbar{
+        display: flex;
+        column-gap: 30px;
+        p{
+            a{
+                @include nav-design($bg-color, none, pointer);
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+    .side-bar{
+        display: none;
+        cursor: pointer;
+        font-size: $default-size;
+        color: $bg-color;
+    }
+}
+.sidenavbar-links{
+    position: fixed;
+    top: 0;
+    left: -60%;
+    background-color: $bg-color;
+    height: 100%;
+    width: 40%;
+    padding: $default-size;
+    transition: 2s;
+    z-index: 2;
+    .close-bar{
+        text-align: right;
+        font-size: x-large;
+        cursor: pointer;
+        color: $primary-color;
+    }
+    .sidenavbar-link{
+        p{
+            padding: $basic-size;
+            margin-top: $basic-size;
+            a{
+                @include nav-design($primary-color, none, pointer);
+            }
+        }
+    }
+}
+.searchbar{
+    form{
+        @include flex(flex,center,center,wrap,$default-size);
+        margin-top: $default-size;
+        input{
+            padding: $default-size;
+            width: 70%;
+            border-radius: $default-size;
+            border: 1px solid $bg-color;
+            outline: none;
+            &::placeholder{
+                color: $bg-color;
+            }
+        }
+        i{
+            color: $bg-color;
+            font-size: $default-size;
+            margin-left: -40px;
+            cursor: pointer;
+        }
+    }
+}
+.food-container{
+    h1{
+        margin-top: $default-size;
+        text-align: center;
+    }
+    .food-items{
+        @include flex(flex,space-around,center,wrap, 30px);
+        .food-item{
+            flex-basis: 25%;
+            text-align: center;
+            img{
+                width:250px;
+                height: 200px;
+                border-radius: 40px;
+                margin-top: 70px;
+            }
+            h3{
+                margin-top: $basic-size;
+                i{
+                    margin-left: $basic-size;
+                }
+            }
+            
+            button{
+               @extend .button-design;
+               margin-top: $default-size;
+               i{
+                margin-left: 8px
+               }
+            }
+        }
+    }
+    form{
+        button{
+            @extend .button-design;
+            i{
+                margin-left: 5px;
+            }
+        }
+    }
+}
+.unavail{
+    text-align: center;
+    display: none;
+    margin-top: 40px;
+    i{
+        margin-top: $basic-size;
+        font-size: 80px;
+        background-color: yellow;
+        border-radius: 50%;
+    }
+}
+footer{
+    background-color:$bg-color;
+    color: $primary-color;
+    padding: $default-size;
+    text-align: center;
+    margin-top: 40px;
+    .icon{
+        margin-top: 7px;
+        a{
+            text-decoration: none;
+            i{
+                background-color: $primary-color;
+                color: $bg-color;
+                border-radius: 50%;
+                padding: $basic-size;
+                margin-left: $basic-size;
+                font-size: $default-size;
+                cursor: pointer;
+                transition: all 0.5s;
+                &:hover{
+                    transform: translateY(-5px);
+                }
+            }
+        }
+    }
+}
+
+
+/* Media Query */
+
+@media screen and (max-width:640px) {
+    nav {
+        h1{
+            a {
+                font-size: 30px;
+            }
+        }
+        .side-bar {
+            display: block;
+            
+        }
+        .navbar {
+            display: none;
+        }
+    }
+    .food-container{
+        h1{
+            font-size: 25px;
+        }
+        .food-items{
+            flex-direction: column;
+            .food-item {
+                flex-basis: 100%;
+            }
+            form{
+                button{
+                    margin-top: 50px;
+                }
+            }
+        }
+    }
+    .unavail{
+        i{
+            font-size: 30px;
+        }
+    }
+    
+    footer{
+        font-size: 12px;
+        .icon{
+            i{
+                padding: 5px;
+                font-size: $basic-size;
+            }
+        }
+    }
+    
+}
+

@@ -1,0 +1,150 @@
+//Variables
+$primary-color:white;
+$bg-color:darkolivegreen;
+$basic-size:10px;
+$default-size:20px;
+
+//Mixin 
+@mixin position($position,$top,$left){
+    position: $position;
+    top: $top;
+    left: $left;
+}
+//Extend (Multiple element having same design)
+.nav-design{
+    color: $primary-color;
+    text-decoration: none;
+    cursor: pointer;
+}
+//My page styling
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: url(img/homebackground.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    h1{
+        a{
+            font-size: 40px;
+            font-weight: bolder;
+            letter-spacing: 2px;
+            color:$bg-color;
+            text-decoration: none;
+        }
+    }
+    .navbar{
+        display: flex;
+        column-gap: 30px;
+        p{
+            a{
+                @extend .nav-design;
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+    .side-bar{
+        display: none;
+        cursor: pointer;
+        font-size: $default-size;
+        color: $primary-color
+    }
+}
+.sidenavbar-links{
+    @include position( fixed, 0 ,-60% );
+    background-color: $bg-color;
+    height: 100%;
+    width: 40%;
+    padding: $default-size;
+    transition: 2s;
+    z-index: 1;
+    .close-bar{
+        text-align: right;
+        font-size: x-large;
+        cursor: pointer;
+        color: $primary-color;
+    }
+    .sidenavbar-link{
+        p{
+            padding: $basic-size;
+            margin-top: $basic-size;
+            a{
+               @extend .nav-design
+            }
+        }
+    }
+}
+.container{
+    @include position( absolute, 40% , 15% );
+    h3{
+        color:$bg-color;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin-bottom: $basic-size;
+    }
+    form{
+        button{
+            margin-top: $default-size;
+            padding: $basic-size $default-size;
+            background-color: $bg-color;
+            color: $primary-color;
+            border: none;
+            border-radius: $basic-size;
+            cursor: pointer;
+            i{
+                margin-left: 5px;
+                padding: 5px;
+            }
+        }
+    }
+}
+
+
+/* Media Query */
+
+@media screen and (max-width:640px) {
+    body {
+        background-image: url(img/mobile\ bg\ 1.jpeg);
+    }
+
+    nav {
+        h1{
+            a {
+                font-size: 30px;
+                letter-spacing: 1px;
+                color: $primary-color;
+            }
+        }
+        .side-bar {
+            display: block;
+            
+        }
+        .navbar {
+            display: none;
+        }
+    }
+    .container 
+    {
+        h3 {
+            color: $bg-color;
+        }
+        h1 {
+            font-size: $default-size;
+            color: $primary-color;
+        }
+    }
+}

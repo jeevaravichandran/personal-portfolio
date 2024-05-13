@@ -1,0 +1,338 @@
+//Variables
+$primary-color: white;
+$bg-color: darkolivegreen;
+$basic-size: 10px;
+$default-size: 20px;
+
+//Mixin 
+@mixin position($position, $top, $left, $height, $width, $background, $z-index) {
+    position: $position;
+    top: $top;
+    left: $left;
+    height: $height;
+    width: $width;
+    background-color: $background;
+    z-index: $z-index;
+}
+
+@mixin nav-design($color, $text-dec, $cursor) {
+    color: $color;
+    text-decoration: $text-dec;
+    cursor: $cursor;
+}
+
+@mixin flex($display, $justify-content, $align-itmes, $flex-wrap) {
+    display: $display;
+    justify-content: $justify-content;
+    align-items: $align-itmes;
+    flex-wrap: $flex-wrap;
+}
+
+//My page styling
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+nav {
+    @include flex(flex, space-between, center);
+    padding: 15px;
+
+    h1 {
+        a {
+            font-size: 40px;
+            font-weight: bolder;
+            letter-spacing: 2px;
+            color: $bg-color;
+            text-decoration: none;
+        }
+    }
+
+    .navbar {
+        display: flex;
+        column-gap: 30px;
+
+        p {
+            a {
+                @include nav-design($bg-color, none, pointer);
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .side-bar {
+        display: none;
+        cursor: pointer;
+        font-size: $default-size;
+        color: $bg-color;
+    }
+}
+
+.sidenavbar-links {
+    @include position(fixed, 0, -60%, 100%, 40%, $bg-color, 2);
+    padding: $default-size;
+    transition: 2s;
+
+    .close-bar {
+        text-align: right;
+        font-size: x-large;
+        cursor: pointer;
+        color: $primary-color;
+    }
+
+    .sidenavbar-link {
+        p {
+            padding: $basic-size;
+            margin-top: $basic-size;
+
+            a {
+                @include nav-design($primary-color, none, pointer);
+            }
+        }
+    }
+}
+
+.book-table {
+    h1 {
+        font: 40px;
+        letter-spacing: 1px;
+        text-align: center;
+        text-decoration: underline;
+        margin-bottom: 5px;
+        color: $bg-color;
+    }
+
+    p {
+        text-align: center;
+    }
+}
+
+form {
+    padding: $basic-size 30px;
+    margin-top: $default-size;
+
+    .book-tables {
+        @include flex(flex, space-around, center, wrap);
+
+        span {
+            @include flex(flex, center, start, wrap);
+            flex-direction: column;
+            flex-basis: 28%;
+
+            label {
+                color: $bg-color;
+            }
+
+            input {
+                width: 100%;
+                padding: $basic-size;
+                border: 1px solid $bg-color;
+                margin-top: $basic-size;
+                margin-bottom: $basic-size;
+                outline: none;
+            }
+        }
+    }
+
+    .book-requests {
+        @include flex(flex, start, start, wrap);
+        flex-direction: column;
+        width: 96%;
+        margin-left: 30px;
+
+        label {
+            color: $bg-color;
+            margin-top: 5px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 100px;
+            border: 1px solid $bg-color;
+            margin-top: 5px;
+        }
+
+        button {
+            padding: $basic-size $default-size;
+            border: none;
+            border-radius: $default-size;
+            background-color: $bg-color;
+            color: $primary-color;
+            width: 15%;
+            margin: $default-size auto;
+            cursor: pointer;
+        }
+    }
+}
+
+.overlay-booking {
+    @include position(fixed, 0, 0, 100%, 100%, rgba(0, 0, 0, 0.7), 3);
+    overflow: auto;
+    @include flex(flex, center, center, wrap);
+    display: none;
+
+    .booking {
+        background-color: $bg-color;
+        color: $primary-color;
+        padding: 30px;
+        width: 30%;
+        border-radius: $default-size;
+        z-index: 4;
+
+        p {
+            text-align: center;
+        }
+
+        .booking-information {
+            margin-top: 5px;
+            margin-left: 30px;
+        }
+
+        i {
+            background-color: lightgreen;
+            border-radius: 100%;
+            color: $primary-color;
+            padding: 5px;
+            margin-left: $basic-size;
+        }
+
+        form {
+            button {
+                padding: 5px $basic-size;
+                border: none;
+                border-radius: $default-size;
+                background-color: $primary-color;
+                color: $bg-color;
+                cursor: pointer;
+                float: inline-end;
+
+            }
+        }
+
+    }
+}
+
+footer {
+    background-color: $bg-color;
+    color: $primary-color;
+    padding: $default-size;
+    text-align: center;
+    margin-top: 40px;
+
+    .icon {
+        margin-top: 7px;
+
+        a {
+            text-decoration: none;
+
+            i {
+                background-color: $primary-color;
+                color: $bg-color;
+                border-radius: 50%;
+                padding: $basic-size;
+                margin-left: $basic-size;
+                font-size: $default-size;
+                cursor: pointer;
+                transition: all 0.5s;
+
+                &:hover {
+                    transform: translateY(-5px);
+                }
+            }
+        }
+    }
+}
+
+/* Media Query */
+
+@media screen and (max-width:640px) {
+    nav {
+        h1 {
+            a {
+                font-size: 30px;
+            }
+        }
+
+        .side-bar {
+            display: block;
+
+        }
+
+        .navbar {
+            display: none;
+        }
+    }
+
+    .book-table {
+        h1 {
+            font-size: $default-size;
+        }
+
+        p {
+            font-size: 12px;
+        }
+    }
+
+    form {
+        .book-tables {
+            flex-direction: column;
+
+            span {
+                width: 100%;
+
+                input {
+                    width: 93%;
+                }
+            }
+        }
+
+        .book-requests {
+            width: 100%;
+            margin-left: 0;
+
+            textarea {
+                width: 100%;
+            }
+
+            button {
+                width: 40%;
+            }
+        }
+    }
+
+    .overlay-booking {
+        .booking {
+            font-size: 13px;
+            text-align: center;
+
+            p {
+                i {
+                    margin-left: 0;
+                }
+            }
+
+            .booking-information {
+                display: none;
+            }
+        }
+    }
+
+    footer {
+        font-size: 12px;
+
+        .icon {
+            i {
+                padding: 5px;
+                font-size: 14px;
+            }
+        }
+    }
+}

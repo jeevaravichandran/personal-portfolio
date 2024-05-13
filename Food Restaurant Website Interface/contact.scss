@@ -1,0 +1,301 @@
+//Variables
+$primary-color: white;
+$bg-color: darkolivegreen;
+$basic-size: 10px;
+$default-size: 20px;
+
+//Mixin 
+@mixin position($position, $top, $left, $height, $width, $background, $z-index) {
+    position: $position;
+    top: $top;
+    left: $left;
+    height: $height;
+    width: $width;
+    background-color: $background;
+    z-index: $z-index;
+}
+
+@mixin nav-design($color, $text-dec, $cursor) {
+    color: $color;
+    text-decoration: $text-dec;
+    cursor: $cursor;
+}
+
+@mixin flex($display, $justify-content, $align-itmes, $flex-wrap) {
+    display: $display;
+    justify-content: $justify-content;
+    align-items: $align-itmes;
+    flex-wrap: $flex-wrap;
+}
+
+@mixin btn-design($color, $background, $padding, $border, $border-radius, $cursor) {
+    color: $color;
+    background-color: $background;
+    padding: $padding;
+    border: $border;
+    border-radius: $border-radius;
+    cursor: $cursor;
+}
+
+//My page styling
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+
+    h1 {
+        a {
+            font-size: 40px;
+            font-weight: bolder;
+            letter-spacing: 2px;
+            color: $bg-color;
+            text-decoration: none;
+        }
+    }
+
+    .navbar {
+        display: flex;
+        column-gap: 30px;
+
+        p {
+            a {
+                @include nav-design($bg-color, none, pointer);
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .side-bar {
+        display: none;
+        cursor: pointer;
+        font-size: $default-size;
+        color: $bg-color;
+    }
+}
+
+.sidenavbar-links {
+    @include position(fixed, 0, -60%, 100%, 40%, $bg-color, 2);
+    padding: $default-size;
+    transition: 2s;
+
+    .close-bar {
+        text-align: right;
+        font-size: x-large;
+        cursor: pointer;
+        color: $primary-color;
+    }
+
+    .sidenavbar-link {
+        p {
+            padding: $basic-size;
+            margin-top: $basic-size;
+
+            a {
+                @include nav-design($primary-color, none, pointer);
+            }
+        }
+    }
+}
+
+.contact {
+    @include flex(flex, space-around, center, wrap);
+
+    h1 {
+        text-decoration: underline;
+        letter-spacing: 1px;
+        color: $bg-color;
+    }
+
+    .get-in-touch {
+        padding: $default-size;
+        flex-basis: 40%;
+
+        p {
+            margin-top: 5px;
+        }
+
+        form {
+            width: 100%;
+            margin-top: 5px;
+            display: flex;
+            flex-direction: column;
+
+            label {
+                color: $bg-color;
+                margin-top: 5px;
+            }
+
+            input,
+            textarea {
+                padding: $basic-size;
+                border: 1px solid $bg-color;
+                outline: none;
+            }
+
+            textarea {
+                margin-top: 5px;
+                height: 50px;
+            }
+
+            button {
+                @include btn-design($primary-color, $bg-color , $basic-size $default-size, none, $basic-size, pointer);
+                width: 30%;
+                margin-top: $default-size;
+                align-self: self-end;
+            }
+        }
+    }
+
+    .find-us {
+        padding: $default-size;
+        flex-basis: 40%;
+
+        ul {
+            padding: $basic-size;
+            margin-top: 5px;
+
+            li {
+                margin-top: 5px
+            }
+        }
+
+        img {
+            margin-top: $basic-size;
+            width: 100%;
+        }
+    }
+}
+
+.overlay-response {
+    @include position(fixed, 0, 0, 100%, 100%, rgba(0, 0, 0, 0.7), 3);
+    overflow: auto;
+    @include flex(flex, center, center, wrap);
+    display: none;
+
+    .response {
+        background-color: $bg-color;
+        color: $primary-color;
+        padding: 30px;
+        border-radius: $default-size;
+        z-index: 4;
+        text-align: center;
+
+        i {
+            background-color: lightgreen;
+            border-radius: 100%;
+            color: $primary-color;
+            padding: 5px;
+            margin-left: $basic-size;
+        }
+
+        form {
+            button {
+                @include btn-design($bg-color, $primary-color , 5px $basic-size , none, $default-size, pointer);
+                margin-top: 30px;
+            }
+        }
+    }
+}
+
+footer {
+    background-color: $bg-color;
+    color: $primary-color;
+    padding: $default-size;
+    text-align: center;
+    margin-top: 40px;
+
+    .icon {
+        margin-top: 7px;
+
+        a {
+            text-decoration: none;
+
+            i {
+                background-color: $primary-color;
+                color: $bg-color;
+                border-radius: 50%;
+                padding: $basic-size;
+                margin-left: $basic-size;
+                font-size: $default-size;
+                cursor: pointer;
+                transition: all 0.5s;
+
+                &:hover {
+                    transform: translateY(-5px);
+                }
+            }
+        }
+    }
+}
+
+/* Media Query */
+
+@media screen and (max-width:640px) {
+    nav {
+        h1 {
+            a {
+                font-size: 30px;
+            }
+        }
+
+        .side-bar {
+            display: block;
+
+        }
+
+        .navbar {
+            display: none;
+        }
+    }
+
+    .contact {
+        flex-direction: column;
+
+        h1 {
+            font-size: $default-size;
+        }
+
+        .get-in-touch,
+        .find-us {
+            flex-basis: 100%;
+
+            p,
+            form label,
+            ul li {
+                font-size: 13px;
+            }
+        }
+    }
+
+    .overlay-response {
+        .response {
+            width: 50%;
+            font-size: 15px;
+        }
+    }
+
+    footer {
+        font-size: 12px;
+
+        .icon {
+            i {
+                padding: 5px;
+                font-size: 14px;
+            }
+        }
+    }
+}

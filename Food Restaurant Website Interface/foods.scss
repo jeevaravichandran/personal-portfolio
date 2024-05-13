@@ -1,0 +1,302 @@
+//Variables
+$primary-color: white;
+$bg-color: darkolivegreen;
+$basic-size: 10px;
+$default-size: 20px;
+
+//Mixin 
+
+@mixin nav-design($color, $text-dec, $cursor) {
+    color: $color;
+    text-decoration: $text-dec;
+    cursor: $cursor;
+}
+
+@mixin flex($display, $justify-content, $align-itmes, $flex-wrap) {
+    display: $display;
+    justify-content: $justify-content;
+    align-items: $align-itmes;
+    flex-wrap: $flex-wrap;
+}
+
+@mixin img-design($width, $height, $border-radius, $margin-top) {
+    width: $width;
+    height: $height;
+    border-radius: $border-radius;
+    margin-top: $margin-top;
+}
+
+//Extend for same design pattern 
+.button-design {
+    background-color: $bg-color;
+    color: $primary-color;
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+//My page styling
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+nav {
+    @include flex(flex, space-between, center, wrap);
+    padding: 15px;
+
+    h1 {
+        a {
+            font-size: 40px;
+            font-weight: bolder;
+            letter-spacing: 2px;
+            color: $bg-color;
+            text-decoration: none;
+        }
+    }
+
+    .navbar {
+        display: flex;
+        column-gap: 30px;
+
+        p {
+            a {
+                @include nav-design($bg-color, none, pointer);
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .side-bar {
+        display: none;
+        cursor: pointer;
+        font-size: $default-size;
+        color: $bg-color;
+    }
+}
+
+.sidenavbar-links {
+    position: fixed;
+    top: 0;
+    left: -60%;
+    background-color: $bg-color;
+    height: 100%;
+    width: 40%;
+    padding: $default-size;
+    transition: 2s;
+    z-index: 2;
+
+    .close-bar {
+        text-align: right;
+        font-size: x-large;
+        cursor: pointer;
+        color: $primary-color;
+    }
+
+    .sidenavbar-link {
+        p {
+            padding: $basic-size;
+            margin-top: $basic-size;
+
+            a {
+                @include nav-design($primary-color, none, pointer);
+            }
+        }
+    }
+}
+
+.intro {
+    @include flex(flex, space-around, center, wrap);
+    padding: $default-size;
+
+    .food-intro {
+        padding: $basic-size;
+        flex-basis: 40%;
+        flex-wrap: wrap;
+        z-index: 1;
+
+        h2 {
+            color: $bg-color;
+        }
+
+        p {
+            margin-top: $basic-size;
+        }
+    }
+
+    .intro-img {
+        flex-basis: 40%;
+
+        img {
+            @include img-design(100%, 450px, 100%, $default-size);
+        }
+    }
+}
+
+.food-container {
+    h1 {
+        margin-left: 3%;
+        margin-top: 3%;
+    }
+
+    .main-coarse {
+        @include flex(flex, space-around, center, wrap);
+
+        .main-coarse-items {
+            flex-basis: 25%;
+            text-align: center;
+
+            img {
+                @include img-design(250px, 200px, 40px, 50px);
+            }
+
+            h3 {
+                margin-top: $basic-size;
+
+                i {
+                    margin-left: $basic-size;
+                }
+            }
+
+            button {
+                @extend .button-design;
+                margin-top: $default-size;
+
+                i {
+                    margin-left: 8px
+                }
+            }
+        }
+    }
+
+    form {
+        button {
+            @extend .button-design;
+
+            i {
+                margin-left: 5px;
+            }
+        }
+    }
+}
+
+footer {
+    background-color: $bg-color;
+    color: $primary-color;
+    padding: $default-size;
+    text-align: center;
+    margin-top: 40px;
+
+    .icon {
+        margin-top: 7px;
+
+        a {
+            text-decoration: none;
+
+            i {
+                background-color: $primary-color;
+                color: $bg-color;
+                border-radius: 50%;
+                padding: $basic-size;
+                margin-left: $basic-size;
+                font-size: $default-size;
+                cursor: pointer;
+                transition: all 0.5s;
+
+                &:hover {
+                    transform: translateY(-5px);
+                }
+            }
+        }
+    }
+}
+
+
+/* Media Query */
+
+@media screen and (max-width:640px) {
+    nav {
+        h1 {
+            a {
+                font-size: 30px;
+            }
+        }
+
+        .side-bar {
+            display: block;
+
+        }
+
+        .navbar {
+            display: none;
+        }
+    }
+
+    .intro {
+        flex-direction: column;
+
+        .food-intro,
+        .intro-img {
+            flex-basis: 100%;
+        }
+
+        .food-intro {
+            margin-top: $default-size;
+
+            h2 {
+                font-size: 22px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+        }
+
+        .intro-img {
+            width: 90%;
+            height: 300px;
+            margin-left: 15px;
+        }
+    }
+
+    .food-container {
+        h1 {
+            margin-left: 7%;
+            margin-top: 15%;
+        }
+
+        .main-coarse {
+            flex-direction: column;
+
+            .main-coarse-items {
+                flex-basis: 100%;
+            }
+
+            form {
+                button {
+                    margin-top: 50px;
+                }
+            }
+        }
+    }
+
+    footer {
+        font-size: 12px;
+
+        .icon {
+            i {
+                padding: 5px;
+                font-size: 14px;
+            }
+        }
+    }
+}
