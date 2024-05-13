@@ -1,0 +1,199 @@
+//Variables
+$text-color: white;
+$basic-size: 10px;
+$default-size: 20px;
+$error-msg: red;
+$bg-color: blueviolet;
+$primary-color: black;
+
+//Mixin
+@mixin flex($display: flex, $justify-content: start, $align-items: start, $flex-wrap: wrap) {
+    display: $display;
+    justify-content: $justify-content;
+    align-items: $align-items;
+    flex-wrap: $flex-wrap;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(imgs/itl.cat_cat-wallpaper_122055.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    @include flex(flex, center, center, wrap);
+    font-family: 'poppins', sans-serif;
+
+}
+
+
+form {
+    background-color: transparent;
+    color: $text-color;
+    padding: $default-size;
+    border-radius: $basic-size;
+    box-shadow: 0 0 $basic-size rgba(248, 245, 245, 0.1);
+    max-width: 400px;
+    width: 100%;
+
+    h2 {
+        text-align: center;
+        font-size: 25px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+
+        #termscheck {
+            width: 5%;
+        }
+
+        a {
+            text-decoration: none;
+            margin-left: 7px;
+            color: $bg-color;
+            font-weight: 600;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 15px;
+        background-color: transparent;
+        border-radius: $basic-size;
+        border: 1px solid gray;
+        outline: none;
+        color: $text-color;
+    }
+
+    p {
+        font-size: 12px;
+        text-align: center;
+        margin-top: $basic-size;
+    }
+
+    .password-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        .toggle-password {
+            cursor: pointer;
+            color: $text-color;
+            margin-left: -30px;
+            margin-top: -15px;
+            font-size: 12px;
+        }
+    }
+
+    .error-message {
+        color: $error-msg;
+        margin-top: -8px;
+        margin-bottom: 16px;
+        font-size: $basic-size;
+    }
+
+    button {
+        width: 40%;
+        font-size: 15px;
+        display: block;
+        margin: 0 auto;
+        padding: 15px 25px;
+        border: none;
+        border-radius: $basic-size;
+        background-color: transparent;
+        color: $text-color;
+        margin-top: 15px;
+        cursor: pointer;
+        box-shadow: 0 0 $basic-size tgba(248, 245, 245, 0.1);
+        transition: transform 0.5s;
+        margin-bottom: $basic-size;
+
+        &:hover {
+            transform: translateY(-5px);
+            background-color: $bg-color;
+            color: black;
+        }
+    }
+
+    .newpass-info {
+        font-size: 8px;
+        color: $error-msg;
+        margin-bottom: 15px;
+    }
+
+}
+
+.password-layer {
+    @include flex(flex, center, center, wrap);
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    z-index: 2;
+    display: none;
+
+    .password-msg {
+        background-color: $bg-color;
+        color: $text-color;
+        padding: 30px;
+        border: none;
+        border-radius: $default-size;
+        text-align: center;
+
+        p {
+            i {
+                margin-left: 5px;
+                background-color: lightgreen;
+                color: $text-color;
+                border: none;
+                border-radius: 50%;
+                padding: 5px;
+            }
+        }
+
+        a {
+            background-color: $text-color;
+            color: $primary-color;
+            padding: 5px 15px;
+            border-radius: $default-size;
+            text-decoration: none;
+            margin-top: $default-size;
+            display: inline-block;
+        }
+    }
+}
+
+/* Media Query */
+
+@media screen and (max-width:600px) {
+    body {
+        background-image: url(imgs/phone\ pg.jpg);
+    }
+
+    form {
+        max-width: 300px;
+        width: 100%;
+        font-size: 14px;
+    }
+    .password-layer{
+        .password-msg{
+            width: 60%;
+        }
+    }
+}
