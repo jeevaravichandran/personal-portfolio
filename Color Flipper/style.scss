@@ -1,0 +1,54 @@
+// <---Variables --->
+$primary-color:crimson;
+$secondary-color:white;
+$button-bgcolor:#ff004f;
+$border-color:black;
+$default-size:10px;
+
+@mixin flex($display,$justify-content,$align-items){
+    display: $display;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.head{
+
+    @include flex(flex, space-between, center);
+    padding: $default-size $default-size+10;
+    color: $primary-color;
+    font-size: $default-size+10;
+}
+
+.wrap{
+    @include flex(flex,center,center);
+    width: 100vw;
+    height: 85vh;
+    border-top: 3px solid $border-color ;
+
+    #btn{
+        background-color: $button-bgcolor;
+        color: $secondary-color;
+        padding: $default-size+10 $default-size+30;
+        border: none;
+        border-radius: $default-size+10;
+        text-transform: uppercase;
+        font-size: $default-size+9;
+        cursor: pointer;
+        letter-spacing: 2px;
+    }
+}
+
+
+/* ------------Media Query-------------- */
+
+@media screen and (max-width:600px){
+    .head{
+        font-size: $default-size+2;
+    }
+}
