@@ -1,0 +1,298 @@
+//Variables
+$primary-color: #FD6569;
+$secondary-color: black;
+$text-color: white;
+$default-size: 20px;
+$bg-color: transparent;
+
+//Mixin
+
+@mixin flex($display: flex, $justify-content: start, $align-items: start, $flex-wrap: wrap) {
+    display: $display;
+    justify-content: $justify-content;
+    align-items: $align-items;
+    flex-wrap: $flex-wrap;
+}
+
+@mixin fixed($position, $top, $left, $z-index, $width, $height, $background) {
+    position: $position;
+    top: $top;
+    left: $left;
+    z-index: $z-index;
+    width: $width;
+    height: $height;
+    background-color: $background;
+}
+
+// -----Styling my page----
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'poppins', sans-serif;
+}
+
+nav {
+    @include flex(flex, space-between, center, wrap);
+    background-color: $primary-color;
+    padding: 10px;
+
+    h1 {
+        font-size: $default-size+20;
+    }
+
+    ul {
+        li {
+            display: inline;
+            margin-right: $default-size+10;
+            list-style: none;
+
+            a {
+                text-decoration: none;
+                color: $secondary-color;
+                font-size: $default-size;
+                cursor: pointer;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    p {
+        display: none;
+        font-size: $default-size;
+    }
+}
+
+.sidenav-bar {
+    @include fixed(fixed, 0, -50%, 4, 50%, 100vh, $primary-color );
+    color: $text-color;
+    padding: $default-size;
+    transition: 0.5s;
+
+    p {
+        i {
+            float: right;
+            font-size: 25px;
+        }
+    }
+
+    ul {
+        margin-top: 70px;
+        padding: 10px 70px;
+
+        li {
+            list-style: none;
+            margin-top: 30px;
+
+            a {
+                text-decoration: none;
+                color: $text-color;
+                font-size: $default-size;
+            }
+        }
+    }
+}
+
+.head {
+    h1 {
+        text-align: center;
+        font-weight: 600;
+        font-size: $default-size+20;
+        margin-top: 10px;
+    }
+
+    p {
+        text-align: center;
+    }
+}
+
+.container {
+    @include flex(flex, space-around, center, wrap);
+    padding: $default-size;
+
+    .book-container {
+        flex-basis: 30%;
+        padding: $default-size;
+        background-color: $secondary-color;
+        color: $text-color;
+        border-radius: $default-size;
+        margin: $default-size;
+        display: inline-block;
+        vertical-align: top;
+
+        h2 {
+            color: $primary-color;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        h4 {
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        p {
+            font-size: 15px;
+        }
+
+        button {
+            background-color: $primary-color;
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+            margin-top: $default-size;
+            cursor: pointer;
+            float: inline-end;
+        }
+    }
+}
+
+.popup-layer {
+    @include fixed(fixed, 0, 0, 1, 100%, 100%, rgba(0, 0, 0, 0.8));
+    @include flex(flex, center, center, wrap);
+    display: none;
+    overflow: auto;
+
+    .popup-message {
+        background-color: $primary-color;
+        padding: 40px;
+        z-index: 2;
+        border-radius: 10px;
+        width: 40%;
+
+        h2 {
+            text-align: center;
+            margin-top: -30px;
+        }
+
+        form {
+
+            input,
+            textarea {
+                background: $bg-color;
+                width: 100%;
+                margin: 5px;
+                padding: 5px;
+                border: none;
+                border-bottom: 2px solid $secondary-color;
+                font-size: $default-size;
+                outline: none;
+
+                &::placeholder {
+                    color: $secondary-color
+                }
+            }
+
+            button {
+                background-color: $secondary-color;
+                border-radius: 10px;
+                margin: 5px;
+                cursor: pointer;
+                padding: 10px $default-size;
+                border: none;
+                color: $text-color;
+            }
+        }
+    }
+}
+
+.add-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: $primary-color;
+    padding: $default-size 30px;
+    border-radius: 100%;
+    border: none;
+    margin-top: $default-size;
+    cursor: pointer;
+    font-size: 40px;
+}
+
+
+/* Media Query  */
+
+@media screen and (max-width:678px) {
+    nav {
+        h1 {
+            font-size: 30px;
+        }
+
+        p {
+            display: block;
+        }
+
+        ul li {
+            display: none;
+        }
+    }
+
+    .sidenav-bar {
+        ul {
+            margin-top: 50px;
+            padding: 10px 30px;
+        }
+    }
+
+    .head {
+        h1 {
+            font-size: 25px;
+        }
+
+        p {
+            font-size: 13px;
+        }
+    }
+
+    .container {
+        .book-container {
+            flex-basis: 100%;
+
+            h2,
+            h4 {
+                margin-bottom: 10px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+        }
+    }
+
+    .add-button {
+        padding: 10px $default-size;
+    }
+
+    .popup-layer {
+        .popup-message {
+            width: 70%;
+            top: 30%;
+            left: 15%;
+            font-size: 16px;
+
+            input,
+            textarea {
+                font-size: 13px;
+
+                &::placeholder {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width:679px) and (max-width:1299px) {
+    .container {
+        .book-container {
+            flex-basis: 40%;
+        }
+    }
+}
