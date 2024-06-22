@@ -1,0 +1,408 @@
+//Variables
+$primary-color: #FD6569;
+$secondary-color: black;
+$text-color: white;
+$default-size: 20px;
+$bg-color: transparent;
+
+//Mixin
+
+@mixin flex($display: flex, $justify-content: start, $align-items: start, $flex-wrap: wrap) {
+    display: $display;
+    justify-content: $justify-content;
+    align-items: $align-items;
+    flex-wrap: $flex-wrap;
+}
+
+// -----Styling my page----
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'poppins', sans-serif;
+}
+header {
+    @include flex(flex, space-between, center, wrap);
+    padding: 10px;
+    border-bottom: 1px solid whitesmoke;
+    background-color: $primary-color;
+
+    h1 {
+        font-size: 45px;
+        color: $secondary-color;
+
+        &::first-letter {
+            font-size: 55px;
+        }
+    }
+
+    nav {
+        ul {
+            @include flex(flex, center, center, nowrap);
+            column-gap: 70px;
+
+            li {
+                list-style: none;
+                display: inline-block;
+                font-size: 16px;
+                text-transform: uppercase;
+
+                a {
+                    text-decoration: none;
+                    color: $secondary-color;
+                    position: relative;
+
+                    &:hover {
+                        color: $text-color;
+                    }
+
+                    &::after {
+                        content: "";
+                        height: 3px;
+                        width: 0;
+                        background-color: $text-color;
+                        position: absolute;
+                        left: 0;
+                        bottom: -6px;
+                        transition: all 0.5s;
+                    }
+
+                    &:hover::after {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    p {
+        display: none;
+        font-size: $default-size;
+    }
+}
+
+.sidenav-bar {
+    background-color: $primary-color;
+    color: $text-color;
+    position: fixed;
+    top: 0;
+    left: -70%;
+    width: 50%;
+    height: 100vh;
+    padding: $default-size;
+    transition: 0.5s;
+    z-index: 4;
+
+    p {
+        i {
+            float: right;
+            font-size: 25px;
+        }
+    }
+
+    ul {
+        margin-top: 70px;
+        padding: 10px 70px;
+
+        li {
+            list-style: none;
+            margin-top: 30px;
+
+            a {
+                text-decoration: none;
+                color: $text-color;
+                font-size: $default-size;
+            }
+        }
+    }
+}
+
+.heading {
+    h1 {
+        text-align: center;
+        color: $primary-color;
+        font-size: 40px;
+        margin: $default-size 0;
+    }
+}
+
+.searchbox {
+    form {
+        @include flex(flex, center, center);
+
+        input {
+            width: 60%;
+            outline: none;
+            border-radius: $default-size;
+            padding: $default-size;
+            margin-top: 30px;
+            border: 1px solid silver;
+        }
+
+        i {
+            font-size: $default-size;
+            margin-left: -40px;
+            margin-top: 30px;
+        }
+    }
+}
+
+.container {
+    @include flex(flex, space-around, center, wrap);
+    padding: $default-size;
+
+    .book-container {
+        flex-basis: 25%;
+        padding: $default-size;
+        background-color: $secondary-color;
+        color: $text-color;
+        border-radius: $default-size;
+        margin: 30px;
+        display: inline-block;
+        vertical-align: top;
+
+        img {
+            height: 200px;
+            display: block;
+            margin: auto;
+            border-radius: $default-size;
+        }
+
+        h3 {
+            color: $primary-color;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        h4 {
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        p {
+            font-size: 15px;
+        }
+
+        a {
+            display: block;
+            width: fit-content;
+            text-decoration: none;
+            color: $primary-color;
+            background-color: $text-color;
+            padding: 15px $default-size;
+            margin: $default-size 5px;
+            border: none;
+            border-radius: $default-size;
+
+            &:hover {
+                color: $text-color;
+                background-color: $primary-color;
+            }
+        }
+    }
+}
+
+.error-msg {
+    text-align: center;
+    display: none;
+    margin-bottom: $default-size;
+
+    i {
+        font-size: 80px;
+        background-color: yellow;
+        border-radius: 50%;
+        margin-top: 10px;
+    }
+}
+
+
+footer {
+    background-color: $primary-color;
+    text-align: center;
+    padding: $default-size;
+
+    p {
+        font-size: 14px;
+    }
+
+    .copyrights {
+        margin-top: 10px;
+        font-size: 11px;
+    }
+}
+
+// ------About Page Design--------
+.about {
+    @include flex(flex, space-around, center, wrap);
+    padding: $default-size;
+
+    .about-us {
+        flex-basis: 40%;
+
+        h3 {
+            font-size: 25px;
+        }
+
+        h1 {
+            font-size: 60px;
+            letter-spacing: 2px;
+            color: $primary-color;
+        }
+
+        p {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        button {
+            padding: 15px 25px;
+            color: $primary-color;
+            background-color: $secondary-color;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: $default-size;
+
+            &:hover {
+                background-color: $primary-color;
+                color: $secondary-color;
+            }
+        }
+    }
+
+    .about-img {
+        flex-basis: 40%;
+
+        img {
+            width: 100%;
+            height: 500px;
+            border-radius: $default-size;
+        }
+    }
+}
+
+/* Media Query  */
+
+@media screen and (max-width:678px) {
+    header {
+        h1 {
+            font-size: 30px;
+
+            &::first-letter {
+                font-size: 35px;
+            }
+        }
+
+        nav {
+            ul {
+                display: none;
+            }
+        }
+
+        p {
+            display: block;
+        }
+    }
+
+    .sidenav-bar {
+        ul {
+            margin-top: 50px;
+            padding: 10px 30px;
+        }
+    }
+
+    .heading {
+        h1 {
+            font-size: 18px;
+        }
+    }
+
+    .searchbox {
+        input {
+            margin-left: -25px;
+        }
+    }
+
+    .container {
+        .book-container {
+            flex-basis: 100%;
+
+            h2,
+            h4 {
+                margin-bottom: 10px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+
+            a {
+                padding: 10px 15px;
+                font-size: 13px;
+            }
+        }
+    }
+
+    .about {
+        flex-direction: column;
+
+        .about-us,
+        .about-img {
+            flex-basis: 100%;
+        }
+
+        .about-us {
+            h3 {
+                font-size: $default-size;
+            }
+
+            h1 {
+                font-size: 40px;
+                letter-spacing: 1px;
+            }
+        }
+
+        .about-img {
+            margin-top: 50px;
+
+            img {
+                height: 300px;
+            }
+        }
+    }
+
+    .error-msg {
+        i {
+            font-size: 30px;
+        }
+
+        h3 {
+            font-size: 14px;
+        }
+    }
+    footer {
+        h1 {
+            font-size: 22px;
+        }
+
+        p {
+            font-size: 12px;
+        }
+
+        .copyrights {
+            font-size: 11px;
+        }
+    }
+}
+
+@media screen and (min-width:679px) and (max-width:1299px) {
+
+    .container {
+        .book-container {
+            flex-basis: 30%;
+        }
+    }
+}

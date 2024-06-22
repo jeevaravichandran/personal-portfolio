@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Yoo</title>
+    <!-- --------Link fonts-------- -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <!-- Link font awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- -------my css-------- -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Book Yoo</h1>
+        <nav>
+            <ul>
+                <li><a href="index">Home</a></li>
+                <li><a href="myworks">MyWork</a></li>
+                <li><a href="books">Books</a></li>
+                <li><a href="authors">Authors</a></li>
+                <li><a href="about">About</a></li>
+            </ul>
+            <p onclick="opensidenav()"><i class="fa-solid fa-bars"></i></p>
+        </nav>
+    </header>
+
+    <div class="searchBar">
+        <input type="text" placeholder="Search Here......">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    <div class="sidenav-bar">
+        <p onclick="closesidenav()"><i class="fa-solid fa-xmark"></i></p>
+        <ul>
+            <li><a href="index">Home</a></li>
+            <li><a href="myworks">MyWork</a></li>
+            <li><a href="books">Books</a></li>
+            <li><a href="authors">Authors</a></li>
+            <li><a href="about">About</a></li>
+
+        </ul>
+    </div>
+    <div class="img-container">
+        <div>
+            <h1>Good Book's Don't give up all the secrets at once</h1>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae ex error nobis recusandae rerum tempora
+                id deserunt provident, illum fuga?</p>
+            <a href="books">View All Books</a>
+            <a id="explore" href="myworks">Create Now</a>
+        </div>
+    </div>
+    <div class="catagory">
+        <div>
+            <i class="fa-solid fa-chess"></i>
+            <h3>Children's Book</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit quis rerum ipsum ducimus! Numquam cum
+                labore.</p>
+        </div>
+        <div>
+            <i class="fa-regular fa-heart"></i>
+            <h3>Romance</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit quis rerum ipsum ducimus! Numquam cum
+                labore.</p>
+        </div>
+        <div>
+            <i class="fa-solid fa-masks-theater"></i>
+            <h3>Drama</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit quis rerum ipsum ducimus! Numquam cum
+                labore.</p>
+        </div>
+        <div>
+            <i class="fa-brands fa-jedi-order"></i>
+            <h3>History</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit quis rerum ipsum ducimus! Numquam cum
+                labore.</p>
+        </div>
+    </div>
+    <div class="sensex">
+        <div>
+            <h1>75,678</h1>
+            <h5>Active Readers</h5>
+        </div>
+        <div>
+            <h1>3,498</h1>
+            <h5>Total Pages</h5>
+        </div>
+        <div>
+            <h1>276</h1>
+            <h5>Cup of Coffee</h5>
+        </div>
+        <div>
+            <h1>14,324</h1>
+            <h5>Facebook fans</h5>
+        </div>
+    </div>
+
+    <footer>
+        <h1>Book Yoo</h1>
+        <p>bookyoo@gmail.com</p>
+        <p>9876543210</p>
+        <div class="social-icons">
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+        </div>
+        <p class="copyrights">copyrights 2024 bookyoo.All rights reserved</p>
+    </footer>
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>

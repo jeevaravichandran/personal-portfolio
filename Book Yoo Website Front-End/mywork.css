@@ -1,0 +1,272 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "poppins", sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px;
+  border-bottom: 1px solid whitesmoke;
+  background-color: #FD6569;
+}
+header h1 {
+  font-size: 45px;
+  color: black;
+}
+header h1::first-letter {
+  font-size: 55px;
+}
+header nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  -moz-column-gap: 70px;
+       column-gap: 70px;
+}
+header nav ul li {
+  list-style: none;
+  display: inline-block;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+header nav ul li a {
+  text-decoration: none;
+  color: black;
+  position: relative;
+}
+header nav ul li a:hover {
+  color: white;
+}
+header nav ul li a::after {
+  content: "";
+  height: 3px;
+  width: 0;
+  background-color: white;
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: all 0.5s;
+}
+header nav ul li a:hover::after {
+  width: 100%;
+}
+header p {
+  display: none;
+  font-size: 20px;
+}
+
+.sidenav-bar {
+  position: fixed;
+  top: 0;
+  left: -50%;
+  z-index: 4;
+  width: 50%;
+  height: 100vh;
+  background-color: #FD6569;
+  color: white;
+  padding: 20px;
+  transition: 0.5s;
+}
+.sidenav-bar p i {
+  float: right;
+  font-size: 25px;
+}
+.sidenav-bar ul {
+  margin-top: 70px;
+  padding: 10px 70px;
+}
+.sidenav-bar ul li {
+  list-style: none;
+  margin-top: 30px;
+}
+.sidenav-bar ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+
+.head h1 {
+  text-align: center;
+  font-weight: 600;
+  font-size: 40px;
+  margin-top: 10px;
+}
+.head p {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+.container .book-container {
+  flex-basis: 30%;
+  padding: 20px;
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+  margin: 20px;
+  display: inline-block;
+  vertical-align: top;
+}
+.container .book-container h2 {
+  color: #FD6569;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.container .book-container h4 {
+  margin-bottom: 10px;
+  text-align: center;
+}
+.container .book-container p {
+  font-size: 15px;
+}
+.container .book-container button {
+  background-color: #FD6569;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  margin-top: 20px;
+  cursor: pointer;
+  float: inline-end;
+}
+
+.popup-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  display: none;
+  overflow: auto;
+}
+.popup-layer .popup-message {
+  background-color: #FD6569;
+  padding: 40px;
+  z-index: 2;
+  border-radius: 10px;
+  width: 40%;
+}
+.popup-layer .popup-message h2 {
+  text-align: center;
+  margin-top: -30px;
+}
+.popup-layer .popup-message form input,
+.popup-layer .popup-message form textarea {
+  background: transparent;
+  width: 100%;
+  margin: 5px;
+  padding: 5px;
+  border: none;
+  border-bottom: 2px solid black;
+  font-size: 20px;
+  outline: none;
+}
+.popup-layer .popup-message form input::-moz-placeholder, .popup-layer .popup-message form textarea::-moz-placeholder {
+  color: black;
+}
+.popup-layer .popup-message form input::placeholder,
+.popup-layer .popup-message form textarea::placeholder {
+  color: black;
+}
+.popup-layer .popup-message form button {
+  background-color: black;
+  border-radius: 10px;
+  margin: 5px;
+  cursor: pointer;
+  padding: 10px 20px;
+  border: none;
+  color: white;
+}
+
+.add-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #FD6569;
+  padding: 20px 30px;
+  border-radius: 100%;
+  border: none;
+  margin-top: 20px;
+  cursor: pointer;
+  font-size: 40px;
+}
+
+/* Media Query  */
+@media screen and (max-width: 678px) {
+  header h1 {
+    font-size: 30px;
+  }
+  header h1::first-letter {
+    font-size: 35px;
+  }
+  header nav ul {
+    display: none;
+  }
+  header p {
+    display: block;
+  }
+  .sidenav-bar ul {
+    margin-top: 50px;
+    padding: 10px 30px;
+  }
+  .head h1 {
+    font-size: 25px;
+  }
+  .head p {
+    font-size: 13px;
+  }
+  .container .book-container {
+    flex-basis: 100%;
+  }
+  .container .book-container h2,
+  .container .book-container h4 {
+    margin-bottom: 10px;
+  }
+  .container .book-container p {
+    font-size: 14px;
+  }
+  .add-button {
+    padding: 10px 20px;
+  }
+  .popup-layer .popup-message {
+    width: 70%;
+    top: 30%;
+    left: 15%;
+    font-size: 16px;
+  }
+  .popup-layer .popup-message input,
+  .popup-layer .popup-message textarea {
+    font-size: 13px;
+  }
+  .popup-layer .popup-message input::-moz-placeholder, .popup-layer .popup-message textarea::-moz-placeholder {
+    font-size: 14px;
+  }
+  .popup-layer .popup-message input::placeholder,
+  .popup-layer .popup-message textarea::placeholder {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 679px) and (max-width: 1299px) {
+  .container .book-container {
+    flex-basis: 40%;
+  }
+}/*# sourceMappingURL=mywork.css.map */

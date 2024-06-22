@@ -1,0 +1,319 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "poppins", sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px;
+  border-bottom: 1px solid whitesmoke;
+  background-color: #FD6569;
+}
+header h1 {
+  font-size: 45px;
+  color: black;
+}
+header h1::first-letter {
+  font-size: 55px;
+}
+header nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  -moz-column-gap: 70px;
+       column-gap: 70px;
+}
+header nav ul li {
+  list-style: none;
+  display: inline-block;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+header nav ul li a {
+  text-decoration: none;
+  color: black;
+  position: relative;
+}
+header nav ul li a:hover {
+  color: white;
+}
+header nav ul li a::after {
+  content: "";
+  height: 3px;
+  width: 0;
+  background-color: white;
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: all 0.5s;
+}
+header nav ul li a:hover::after {
+  width: 100%;
+}
+header p {
+  display: none;
+  font-size: 20px;
+}
+
+.searchBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+.searchBar input {
+  padding: 11px;
+  border-radius: 10px;
+  border: 1px solid silver;
+  outline: none;
+  width: 40%;
+}
+.searchBar i {
+  background-color: #FD6569;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 12px 25px;
+  margin-left: -50px;
+}
+
+.sidenav-bar {
+  background-color: #FD6569;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: -70%;
+  width: 50%;
+  height: 100vh;
+  padding: 20px;
+  transition: 0.5s;
+  z-index: 4;
+}
+.sidenav-bar p i {
+  float: right;
+  font-size: 25px;
+}
+.sidenav-bar ul {
+  margin-top: 70px;
+  padding: 10px 70px;
+}
+.sidenav-bar ul li {
+  list-style: none;
+  margin-top: 30px;
+}
+.sidenav-bar ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+
+.img-container {
+  background-image: url(imgs/education-day-arrangement-table-with-copy-space2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 60vh;
+  margin-top: 30px;
+}
+.img-container div {
+  padding: 30px;
+  width: 40%;
+}
+.img-container div h1 {
+  font-size: 35px;
+  margin-bottom: 10px;
+}
+.img-container div p {
+  color: white;
+  margin-bottom: 20px;
+}
+.img-container div a {
+  text-decoration: none;
+  margin-right: 30px;
+  padding: 15px 20px;
+  background-color: white;
+  color: #FD6569;
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 20px;
+}
+.img-container div a:hover {
+  background-color: #FD6569;
+  color: white;
+}
+.img-container div #explore {
+  background-color: #FD6569;
+  color: white;
+}
+.img-container div #explore:hover {
+  background-color: white;
+  color: #FD6569;
+}
+
+.catagory {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}
+.catagory div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  flex-basis: 20%;
+  background-color: darkgray;
+  border-radius: 20px;
+  padding: 20px;
+  cursor: pointer;
+}
+.catagory div:hover {
+  background-color: #FD6569;
+}
+.catagory div i {
+  background-color: silver;
+  padding: 20px 30px;
+  font-size: 30px;
+  border-radius: 50%;
+  position: relative;
+}
+.catagory div h3 {
+  margin-top: 10px;
+}
+.catagory div p {
+  font-size: 14px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.sensex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: wheat;
+  padding: 20px;
+  -moz-column-gap: 100px;
+       column-gap: 100px;
+  margin-top: 40px;
+}
+.sensex div {
+  text-align: center;
+}
+.sensex div h1 {
+  font-size: 35px;
+}
+.sensex div h5 {
+  color: darkgray;
+}
+
+footer {
+  background-color: #FD6569;
+  text-align: center;
+  padding: 20px;
+}
+footer p {
+  font-size: 14px;
+}
+footer .copyrights {
+  margin-top: 10px;
+  font-size: 11px;
+}
+
+@media screen and (max-width: 678px) {
+  header h1 {
+    font-size: 30px;
+  }
+  header h1::first-letter {
+    font-size: 35px;
+  }
+  header nav ul {
+    display: none;
+  }
+  header p {
+    display: block;
+  }
+  .searchBar input {
+    padding: 8px;
+    width: 60%;
+  }
+  .searchBar i {
+    padding: 9px 20px;
+  }
+  .sidenav-bar ul {
+    margin-top: 50px;
+    padding: 10px 30px;
+  }
+  .img-container {
+    background-image: none;
+    height: 30vh;
+  }
+  .img-container div {
+    padding: 10px;
+    width: 90%;
+    flex-wrap: wrap;
+  }
+  .img-container div h1 {
+    font-size: 16px;
+  }
+  .img-container div p {
+    color: black;
+    font-size: 11px;
+    margin-top: 20px;
+  }
+  .img-container div a {
+    margin-top: 30px;
+    padding: 10px 15px;
+    background-color: black;
+    font-size: 13px;
+  }
+  .img-container div #explore:hover {
+    background-color: black;
+  }
+  .catagory {
+    flex-direction: column;
+    margin-top: 20px;
+    row-gap: 30px;
+    padding: 30px;
+  }
+  .catagory div {
+    flex-basis: 100%;
+  }
+  .catagory div i {
+    padding: 15px 25px;
+    font-size: 20px;
+  }
+  .catagory div p {
+    font-size: 11px;
+  }
+  .sensex {
+    row-gap: 20px;
+  }
+  .sensex div h1 {
+    font-size: 17px;
+  }
+  .sensex div h5 {
+    font-size: 11px;
+  }
+  footer h1 {
+    font-size: 22px;
+  }
+  footer p {
+    font-size: 12px;
+  }
+  footer .copyrights {
+    font-size: 11px;
+  }
+}/*# sourceMappingURL=style.css.map */
