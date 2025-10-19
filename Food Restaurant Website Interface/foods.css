@@ -1,6 +1,4 @@
-.button-design,
-.food-container form button,
-.food-container .main-coarse .main-coarse-items button {
+.button-design, .food-container form button, .food-container .main-coarse .main-coarse-items button {
   background-color: darkolivegreen;
   color: white;
   padding: 20px;
@@ -25,7 +23,6 @@ nav {
   flex-wrap: wrap;
   padding: 15px;
 }
-
 nav h1 a {
   font-size: 40px;
   font-weight: bolder;
@@ -33,23 +30,19 @@ nav h1 a {
   color: darkolivegreen;
   text-decoration: none;
 }
-
 nav .navbar {
   display: flex;
   -moz-column-gap: 30px;
-  column-gap: 30px;
+       column-gap: 30px;
 }
-
 nav .navbar p a {
   color: darkolivegreen;
   text-decoration: none;
   cursor: pointer;
 }
-
 nav .navbar p a:hover {
   text-decoration: underline;
 }
-
 nav .side-bar {
   display: none;
   cursor: pointer;
@@ -68,19 +61,16 @@ nav .side-bar {
   transition: 2s;
   z-index: 2;
 }
-
 .sidenavbar-links .close-bar {
   text-align: right;
   font-size: x-large;
   cursor: pointer;
   color: white;
 }
-
 .sidenavbar-links .sidenavbar-link p {
   padding: 10px;
   margin-top: 10px;
 }
-
 .sidenavbar-links .sidenavbar-link p a {
   color: white;
   text-decoration: none;
@@ -94,26 +84,21 @@ nav .side-bar {
   flex-wrap: wrap;
   padding: 20px;
 }
-
 .intro .food-intro {
   padding: 10px;
   flex-basis: 40%;
   flex-wrap: wrap;
   z-index: 1;
 }
-
 .intro .food-intro h2 {
   color: darkolivegreen;
 }
-
 .intro .food-intro p {
   margin-top: 10px;
 }
-
 .intro .intro-img {
   flex-basis: 40%;
 }
-
 .intro .intro-img img {
   width: 100%;
   height: 450px;
@@ -125,42 +110,34 @@ nav .side-bar {
   margin-left: 3%;
   margin-top: 3%;
 }
-
 .food-container .main-coarse {
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
 }
-
 .food-container .main-coarse .main-coarse-items {
   flex-basis: 25%;
   text-align: center;
 }
-
 .food-container .main-coarse .main-coarse-items img {
   width: 250px;
   height: 200px;
   border-radius: 40px;
   margin-top: 50px;
 }
-
 .food-container .main-coarse .main-coarse-items h3 {
   margin-top: 10px;
 }
-
 .food-container .main-coarse .main-coarse-items h3 i {
   margin-left: 10px;
 }
-
 .food-container .main-coarse .main-coarse-items button {
   margin-top: 20px;
 }
-
 .food-container .main-coarse .main-coarse-items button i {
   margin-left: 8px;
 }
-
 .food-container form button i {
   margin-left: 5px;
 }
@@ -172,15 +149,12 @@ footer {
   text-align: center;
   margin-top: 40px;
 }
-
 footer .icon {
   margin-top: 7px;
 }
-
 footer .icon a {
   text-decoration: none;
 }
-
 footer .icon a i {
   background-color: white;
   color: darkolivegreen;
@@ -191,7 +165,6 @@ footer .icon a i {
   cursor: pointer;
   transition: all 0.5s;
 }
-
 footer .icon a i:hover {
   transform: translateY(-5px);
 }
@@ -201,67 +174,51 @@ footer .icon a i:hover {
   nav h1 a {
     font-size: 30px;
   }
-
   nav .side-bar {
     display: block;
   }
-
   nav .navbar {
     display: none;
   }
-
   .intro {
     flex-direction: column;
   }
-
   .intro .food-intro,
   .intro .intro-img {
     flex-basis: 100%;
   }
-
   .intro .food-intro {
     margin-top: 20px;
   }
-
   .intro .food-intro h2 {
     font-size: 22px;
   }
-
   .intro .food-intro p {
     font-size: 14px;
   }
-
   .intro .intro-img {
     width: 90%;
     height: 300px;
     margin-left: 15px;
   }
-
   .food-container h1 {
     margin-left: 7%;
     margin-top: 15%;
   }
-
   .food-container .main-coarse {
     flex-direction: column;
   }
-
   .food-container .main-coarse .main-coarse-items {
     flex-basis: 100%;
   }
-
   .food-container .main-coarse form button {
     margin-top: 50px;
   }
-
   footer {
     font-size: 12px;
   }
-
   footer .icon i {
     padding: 5px;
     font-size: 14px;
   }
-}
-
-/*# sourceMappingURL=foods.css.map */
+}/*# sourceMappingURL=foods.css.map */

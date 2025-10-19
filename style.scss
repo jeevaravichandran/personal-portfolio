@@ -255,11 +255,6 @@ body {
                 cursor: pointer;
                 text-align: center;
 
-                i {
-                    font-size: 60px;
-                    margin-bottom: 30px;
-                }
-
                 h3 {
                     font-size: 25px;
                     font-weight: 500;
@@ -366,38 +361,16 @@ body {
 
                     a {
                         text-decoration: none;
-                        color: $text-color;
+                        color: $primary-color;
 
                         i {
-                            color: $primary-color ;
+                            color: white ;
                             margin-right: 15px;
                             font-size: 25px;
                         }
 
                         &:hover {
                             text-decoration: underline;
-                        }
-                    }
-                }
-
-                .social-icons {
-                    margin-top: 30px;
-
-                    a {
-                        text-decoration: none;
-                        font-size: $default-size;
-                        margin-right: 15px;
-                        color: $primary-color;
-                        display: inline-block;
-                        background-color: $text-color;
-                        padding: $basic-size 15px;
-                        border-radius: 50%;
-                        transition: transform 0.5s;
-
-                        &:hover {
-                            color: $text-color;
-                            background-color: $primary-color;
-                            transform: translateY(-5px);
                         }
                     }
                 }
@@ -426,25 +399,26 @@ body {
             }
 
             .contact-social {
-                h3 {
-                    margin-top: $basic-size;
-                    font-size: 25px;
-                }
+                text-align:left;
 
                 p {
                     margin-top: 15px;
                     font-size: 18px;
+
+                    i {
+                            margin-right: 5px;
+                            color: white;
+                            font-size: 25px;
+                        }
 
                     a {
                         text-decoration: none;
                         color: $primary-color;
                         font-size: 15px;
                         margin-left: $basic-size;
+                        margin-top: 10px;
 
-                        i {
-                            margin-right: 5px;
-                            color: $primary-color;
-                        }
+                        
 
                         &:hover {
                             text-decoration: underline;
@@ -579,13 +553,6 @@ footer {
                     p {
                         font-size: 14px;
                     }
-
-                    .social-icons {
-                        margin-top: $default-size;
-                        align-items: center;
-                        display: flex;
-                        justify-content: center;
-                    }
                 }
 
                 .btn {
@@ -602,6 +569,7 @@ footer {
 
                 p {
                     a {
+                        font-size: 14px;
                         display: block;
                         margin-left: 5px;
                     }

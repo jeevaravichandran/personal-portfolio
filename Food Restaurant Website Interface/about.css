@@ -1,5 +1,4 @@
-.button-design,
-.about-us .about button {
+.button-design, .about-us .about button {
   background-color: darkolivegreen;
   color: white;
   padding: 20px;
@@ -24,7 +23,6 @@ nav {
   flex-wrap: wrap;
   padding: 15px;
 }
-
 nav h1 a {
   font-size: 40px;
   font-weight: bolder;
@@ -32,23 +30,19 @@ nav h1 a {
   color: darkolivegreen;
   text-decoration: none;
 }
-
 nav .navbar {
   display: flex;
   -moz-column-gap: 30px;
-  column-gap: 30px;
+       column-gap: 30px;
 }
-
 nav .navbar p a {
   color: darkolivegreen;
   text-decoration: none;
   cursor: pointer;
 }
-
 nav .navbar p a:hover {
   text-decoration: underline;
 }
-
 nav .side-bar {
   display: none;
   cursor: pointer;
@@ -67,19 +61,16 @@ nav .side-bar {
   transition: 2s;
   z-index: 2;
 }
-
 .sidenavbar-links .close-bar {
   text-align: right;
   font-size: x-large;
   cursor: pointer;
   color: white;
 }
-
 .sidenavbar-links .sidenavbar-link p {
   padding: 10px;
   margin-top: 10px;
 }
-
 .sidenavbar-links .sidenavbar-link p a {
   color: white;
   text-decoration: none;
@@ -93,32 +84,26 @@ nav .side-bar {
   flex-wrap: wrap;
   padding: 30px;
 }
-
 .about-us .about,
 .about-us .about-image {
   flex-basis: 40%;
 }
-
 .about-us .about h1 {
   font-size: 45px;
   color: darkolivegreen;
   letter-spacing: 1px;
 }
-
 .about-us .about p {
   font-size: 15px;
 }
-
 .about-us .about button {
   margin-top: 20px;
 }
-
 .about-us .about-image {
   width: 400px;
   height: 450px;
   border: 1px solid black;
 }
-
 .about-us .about-image img {
   position: relative;
   top: -5%;
@@ -135,15 +120,12 @@ footer {
   text-align: center;
   margin-top: 40px;
 }
-
 footer .icon {
   margin-top: 7px;
 }
-
 footer .icon a {
   text-decoration: none;
 }
-
 footer .icon a i {
   background-color: white;
   color: darkolivegreen;
@@ -154,7 +136,6 @@ footer .icon a i {
   cursor: pointer;
   transition: all 0.5s;
 }
-
 footer .icon a i:hover {
   transform: translateY(-5px);
 }
@@ -164,56 +145,43 @@ footer .icon a i:hover {
   nav h1 a {
     font-size: 30px;
   }
-
   nav .side-bar {
     display: block;
   }
-
   nav .navbar {
     display: none;
   }
-
   .about-us {
     flex-direction: column;
   }
-
   .about-us .about,
   .about-us .about-image {
     flex-basis: 100%;
   }
-
   .about-us .about h1 {
     font-size: 30px;
   }
-
   .about-us .about h3 {
     font-size: 15px;
   }
-
   .about-us .about p {
     font-size: 13px;
     margin-top: 10px;
   }
-
   .about-us .about-image {
     width: 300px;
     height: 170px;
     margin-top: 50px;
   }
-
   .about-us .about-image img {
     height: 250px;
     left: -5%;
   }
-
   footer {
     font-size: 12px;
   }
-
   footer .icon i {
     padding: 5px;
     font-size: 14px;
   }
-}
-
-/*# sourceMappingURL=about.css.map */
+}/*# sourceMappingURL=about.css.map */
